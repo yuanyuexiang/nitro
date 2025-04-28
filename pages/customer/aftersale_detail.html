@@ -5,16 +5,42 @@
   <title>售后详情</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="../common/common.css">
+  <style>
+    body { font-family: sans-serif; background: #f4f7f9; margin:0; padding-bottom: 56px; }
+    .navbar {height: 50px; background: #409eff; color: #fff; display: flex; align-items: center; justify-content: space-between; padding: 0 18px; font-size: 18px; position: fixed; top: 0; left: 0; right: 0; z-index: 10;}
+    .navbar-title {font-weight: bold; letter-spacing: 1px;}
+    .navbar-actions a {color: #fff; margin-left: 18px; font-size: 20px; text-decoration: none;}
+    .tabbar {position: fixed; left: 0; right: 0; bottom: 0; height: 56px; background: #fff; border-top: 1px solid #e3e8ee; display: flex; z-index: 20;}
+    .tabbar-item {flex: 1; text-align: center; color: #888; text-decoration: none; font-size: 13px; padding-top: 4px; transition: color 0.2s; display: flex; flex-direction: column; align-items: center; justify-content: center;}
+    .tabbar-item span {font-size: 22px; display: block; margin-bottom: 2px;}
+    .tabbar-item.active, .tabbar-item:hover {color: #409eff; font-weight: bold;}
+    .page-content { padding-top: 50px; padding-bottom: 60px; }
+  </style>
 </head>
 <body>
+  <!-- 顶部统一导航栏 -->
+  <div class="navbar">
+    <div class="navbar-title">车主平台</div>
+    <div class="navbar-actions">
+      <a href="message_center.html">🔔</a>
+      <a href="profile.html">👤</a>
+    </div>
+  </div>
   <div class="main-container">
     <div class="nav-bar">
       <a href="javascript:history.back()" style="position:absolute;left:16px;color:#409eff;text-decoration:none;">返回</a>
       售后详情
     </div>
-    <div class="page-content">
+    <div class="page-content" style="padding-top:50px;">
       <div style="padding:20px;text-align:center;color:#888;">这里是售后详情内容区</div>
     </div>
+  </div>
+  <!-- 底部统一TabBar -->
+  <div class="tabbar">
+    <a href="home.html" class="tabbar-item"><span>🏠</span><div>首页</div></a>
+    <a href="car_select.html" class="tabbar-item"><span>🚗</span><div>选车</div></a>
+    <a href="order_list.html" class="tabbar-item"><span>📋</span><div>订单</div></a>
+    <a href="profile.html" class="tabbar-item"><span>👤</span><div>我的</div></a>
   </div>
 </body>
 </html> 

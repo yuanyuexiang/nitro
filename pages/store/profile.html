@@ -4,13 +4,15 @@
   <meta charset="UTF-8">
   <title>我的</title>
   <style>
-    body { font-family: sans-serif; background: #f4f7f9; margin:0; }
-    .nav-bar { background: #fff; height: 48px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold; border-bottom: 1px solid #eee; position: fixed; top: 0; left: 0; width: 100%; z-index: 10;}
-    .page-content { padding-top: 48px; padding-bottom: 60px; }
-    .tab-bar { position: fixed; bottom: 0; left: 0; width: 100%; height: 56px; background: #fff; border-top: 1px solid #eee; display: flex; z-index: 10;}
-    .tab-item { flex: 1; text-align: center; color: #888; font-size: 12px; padding-top: 6px; text-decoration: none;}
-    .tab-item.active { color: #28a745; font-weight: bold;}
-    .tab-item .icon { font-size: 22px; display: block; margin-bottom: 2px;}
+    body { font-family: sans-serif; background: #f4f7f9; margin:0; padding-bottom: 56px; }
+    .navbar {height: 50px; background: #409eff; color: #fff; display: flex; align-items: center; justify-content: space-between; padding: 0 18px; font-size: 18px; position: fixed; top: 0; left: 0; right: 0; z-index: 10;}
+    .navbar-title {font-weight: bold; letter-spacing: 1px;}
+    .navbar-actions a {color: #fff; margin-left: 18px; font-size: 20px; text-decoration: none;}
+    .tabbar {position: fixed; left: 0; right: 0; bottom: 0; height: 56px; background: #fff; border-top: 1px solid #e3e8ee; display: flex; z-index: 20;}
+    .tabbar-item {flex: 1; text-align: center; color: #888; text-decoration: none; font-size: 13px; padding-top: 4px; transition: color 0.2s; display: flex; flex-direction: column; align-items: center; justify-content: center;}
+    .tabbar-item span {font-size: 22px; display: block; margin-bottom: 2px;}
+    .tabbar-item.active, .tabbar-item:hover {color: #409eff; font-weight: bold;}
+    .page-content { padding-top: 50px; padding-bottom: 60px; }
     .avatar { width: 60px; height: 60px; border-radius: 50%; background: #e9ecef; margin: 30px auto 10px; }
     .name { font-size: 18px; font-weight: bold; text-align: center; }
     .menu { margin: 20px 15px; }
@@ -19,15 +21,24 @@
   </style>
 </head>
 <body>
-  <div class="nav-bar">我的</div>
-  <div class="page-content">
+  <!-- 顶部统一导航栏 -->
+  <div class="navbar">
+    <div class="navbar-title">门店平台</div>
+    <div class="navbar-actions">
+      <a href="message_center.html">🔔</a>
+      <a href="profile.html">👤</a>
+    </div>
+  </div>
+  <div class="page-content" style="padding-top:50px;">
     <div style="padding:20px;text-align:center;color:#888;">这里是我的内容区</div>
   </div>
-  <div class="tab-bar">
-    <a href="dashboard.html" class="tab-item"><div class="icon">🏠</div>首页</a>
-    <a href="product_list.html" class="tab-item"><div class="icon">🛒</div>商城</a>
-    <a href="order_list.html" class="tab-item"><div class="icon">📦</div>订单</a>
-    <a href="profile.html" class="tab-item active"><div class="icon">👤</div>我的</a>
+  <!-- 底部统一TabBar -->
+  <div class="tabbar">
+    <a href="dashboard.html" class="tabbar-item"><span>🏠</span><div>首页</div></a>
+    <a href="product_list.html" class="tabbar-item"><span>📦</span><div>商品</div></a>
+    <a href="order_list.html" class="tabbar-item"><span>📋</span><div>订单</div></a>
+    <a href="customer_list.html" class="tabbar-item"><span>👥</span><div>客户</div></a>
+    <a href="profile.html" class="tabbar-item active"><span>👤</span><div>我的</div></a>
   </div>
 </body>
 </html> 

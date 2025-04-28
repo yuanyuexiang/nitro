@@ -10,7 +10,16 @@
       margin: 0;
       padding: 0;
       background: #f4f7f9;
+      padding-bottom: 56px;
     }
+    .navbar {height: 50px; background: #409eff; color: #fff; display: flex; align-items: center; justify-content: space-between; padding: 0 18px; font-size: 18px; position: fixed; top: 0; left: 0; right: 0; z-index: 10;}
+    .navbar-title {font-weight: bold; letter-spacing: 1px;}
+    .navbar-actions a {color: #fff; margin-left: 18px; font-size: 20px; text-decoration: none;}
+    .tabbar {position: fixed; left: 0; right: 0; bottom: 0; height: 56px; background: #fff; border-top: 1px solid #e3e8ee; display: flex; z-index: 20;}
+    .tabbar-item {flex: 1; text-align: center; color: #888; text-decoration: none; font-size: 13px; padding-top: 4px; transition: color 0.2s; display: flex; flex-direction: column; align-items: center; justify-content: center;}
+    .tabbar-item span {font-size: 22px; display: block; margin-bottom: 2px;}
+    .tabbar-item.active, .tabbar-item:hover {color: #409eff; font-weight: bold;}
+    .page-content { padding-top: 50px; padding-bottom: 60px; }
     .header {
       background: #fff;
       padding: 15px;
@@ -155,115 +164,133 @@
   </style>
 </head>
 <body>
-  <div class="header">
-    <div class="header-title">车辆详情</div>
-    <div class="header-right">
-      <a href="message_center.html">消息</a>
-      <a href="profile.html">我的</a>
+  <!-- 顶部统一导航栏 -->
+  <div class="navbar">
+    <div class="navbar-title">车主平台</div>
+    <div class="navbar-actions">
+      <a href="message_center.html">🔔</a>
+      <a href="profile.html">👤</a>
     </div>
   </div>
+  <div class="page-content" style="padding-top:50px;">
+    <div class="header">
+      <div class="header-title">车辆详情</div>
+      <div class="header-right">
+        <a href="message_center.html">消息</a>
+        <a href="profile.html">我的</a>
+      </div>
+    </div>
 
-  <div class="content">
-    <div class="section">
-      <div class="car-image"></div>
-      <div class="info-grid">
-        <div class="info-item">
-          <div class="info-label">车辆品牌</div>
-          <div class="info-value">宝马</div>
+    <div class="content">
+      <div class="section">
+        <div class="car-image"></div>
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">车辆品牌</div>
+            <div class="info-value">宝马</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">车型</div>
+            <div class="info-value">3系 2023款</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">车牌号</div>
+            <div class="info-value">粤A12345</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">行驶里程</div>
+            <div class="info-value">12,345公里</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">购买日期</div>
+            <div class="info-value">2023-06-15</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">车辆状态</div>
+            <div class="info-value">正常</div>
+          </div>
         </div>
-        <div class="info-item">
-          <div class="info-label">车型</div>
-          <div class="info-value">3系 2023款</div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">保养信息</div>
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">上次保养</div>
+            <div class="info-value">2024-02-15</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">下次保养</div>
+            <div class="info-value">2024-08-15</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">保养里程</div>
+            <div class="info-value">10,000公里</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">保养周期</div>
+            <div class="info-value">6个月</div>
+          </div>
         </div>
-        <div class="info-item">
-          <div class="info-label">车牌号</div>
-          <div class="info-value">粤A12345</div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">维修记录</div>
+        <div class="tab-bar">
+          <div class="tab-item active">全部</div>
+          <div class="tab-item">维修</div>
+          <div class="tab-item">保养</div>
         </div>
-        <div class="info-item">
-          <div class="info-label">行驶里程</div>
-          <div class="info-value">12,345公里</div>
-        </div>
-        <div class="info-item">
-          <div class="info-label">购买日期</div>
-          <div class="info-value">2023-06-15</div>
-        </div>
-        <div class="info-item">
-          <div class="info-label">车辆状态</div>
-          <div class="info-value">正常</div>
+        <ul class="list">
+          <li class="list-item">
+            <div class="list-item-left">
+              <div class="list-item-icon">🔧</div>
+              <div class="list-item-info">
+                <div class="list-item-title">更换刹车片</div>
+                <div class="list-item-desc">2024-03-10 14:30</div>
+              </div>
+            </div>
+            <div class="list-item-right">已完成</div>
+          </li>
+          <li class="list-item">
+            <div class="list-item-left">
+              <div class="list-item-icon">🔧</div>
+              <div class="list-item-info">
+                <div class="list-item-title">更换机油</div>
+                <div class="list-item-desc">2024-02-15 10:00</div>
+              </div>
+            </div>
+            <div class="list-item-right">已完成</div>
+          </li>
+          <li class="list-item">
+            <div class="list-item-left">
+              <div class="list-item-icon">🛠️</div>
+              <div class="list-item-info">
+                <div class="list-item-title">常规保养</div>
+                <div class="list-item-desc">2024-02-15 10:00</div>
+              </div>
+            </div>
+            <div class="list-item-right">已完成</div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-title">操作</div>
+        <div style="display: flex; gap: 10px;">
+          <a href="#" class="action-btn primary">预约保养</a>
+          <a href="#" class="action-btn">维修记录</a>
+          <a href="#" class="action-btn danger">删除车辆</a>
         </div>
       </div>
     </div>
 
-    <div class="section">
-      <div class="section-title">保养信息</div>
-      <div class="info-grid">
-        <div class="info-item">
-          <div class="info-label">上次保养</div>
-          <div class="info-value">2024-02-15</div>
-        </div>
-        <div class="info-item">
-          <div class="info-label">下次保养</div>
-          <div class="info-value">2024-08-15</div>
-        </div>
-        <div class="info-item">
-          <div class="info-label">保养里程</div>
-          <div class="info-value">10,000公里</div>
-        </div>
-        <div class="info-item">
-          <div class="info-label">保养周期</div>
-          <div class="info-value">6个月</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="section-title">维修记录</div>
-      <div class="tab-bar">
-        <div class="tab-item active">全部</div>
-        <div class="tab-item">维修</div>
-        <div class="tab-item">保养</div>
-      </div>
-      <ul class="list">
-        <li class="list-item">
-          <div class="list-item-left">
-            <div class="list-item-icon">🔧</div>
-            <div class="list-item-info">
-              <div class="list-item-title">更换刹车片</div>
-              <div class="list-item-desc">2024-03-10 14:30</div>
-            </div>
-          </div>
-          <div class="list-item-right">已完成</div>
-        </li>
-        <li class="list-item">
-          <div class="list-item-left">
-            <div class="list-item-icon">🔧</div>
-            <div class="list-item-info">
-              <div class="list-item-title">更换机油</div>
-              <div class="list-item-desc">2024-02-15 10:00</div>
-            </div>
-          </div>
-          <div class="list-item-right">已完成</div>
-        </li>
-        <li class="list-item">
-          <div class="list-item-left">
-            <div class="list-item-icon">🛠️</div>
-            <div class="list-item-info">
-              <div class="list-item-title">常规保养</div>
-              <div class="list-item-desc">2024-02-15 10:00</div>
-            </div>
-          </div>
-          <div class="list-item-right">已完成</div>
-        </li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <div class="section-title">操作</div>
-      <div style="display: flex; gap: 10px;">
-        <a href="#" class="action-btn primary">预约保养</a>
-        <a href="#" class="action-btn">维修记录</a>
-        <a href="#" class="action-btn danger">删除车辆</a>
-      </div>
+    <!-- 底部统一TabBar -->
+    <div class="tabbar">
+      <a href="home.html" class="tabbar-item"><span>🏠</span><div>首页</div></a>
+      <a href="car_select.html" class="tabbar-item"><span>🚗</span><div>选车</div></a>
+      <a href="order_list.html" class="tabbar-item"><span>📋</span><div>订单</div></a>
+      <a href="profile.html" class="tabbar-item"><span>👤</span><div>我的</div></a>
     </div>
   </div>
 </body>

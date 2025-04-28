@@ -5,12 +5,15 @@
   <title>品牌推广小程序 - 活动参与用户</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <style>
-    body {
-      font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f7f9;
-    }
+    body { font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif; margin: 0; padding-bottom: 56px; background: #f4f7f9; }
+    .navbar {height: 50px; background: #409eff; color: #fff; display: flex; align-items: center; justify-content: space-between; padding: 0 18px; font-size: 18px; position: fixed; top: 0; left: 0; right: 0; z-index: 10;}
+    .navbar-title {font-weight: bold; letter-spacing: 1px;}
+    .navbar-actions a {color: #fff; margin-left: 18px; font-size: 20px; text-decoration: none;}
+    .tabbar {position: fixed; left: 0; right: 0; bottom: 0; height: 56px; background: #fff; border-top: 1px solid #e3e8ee; display: flex; z-index: 20;}
+    .tabbar-item {flex: 1; text-align: center; color: #888; text-decoration: none; font-size: 13px; padding-top: 4px; transition: color 0.2s; display: flex; flex-direction: column; align-items: center; justify-content: center;}
+    .tabbar-item span {font-size: 22px; display: block; margin-bottom: 2px;}
+    .tabbar-item.active, .tabbar-item:hover {color: #409eff; font-weight: bold;}
+    .page-content { padding-top: 50px; padding-bottom: 60px; }
     .header {
       background: #fff;
       padding: 15px;
@@ -147,96 +150,113 @@
   </style>
 </head>
 <body>
-  <div class="header">
-    <div class="header-title">活动参与用户</div>
-    <div class="header-right">
-      <a href="message_center.html">消息</a>
-      <a href="profile.html">我的</a>
+  <!-- 顶部统一导航栏 -->
+  <div class="navbar">
+    <div class="navbar-title">品宣平台</div>
+    <div class="navbar-actions">
+      <a href="message_center.html">🔔</a>
+      <a href="profile.html">👤</a>
     </div>
   </div>
+  <div class="page-content" style="padding-top:50px;">
+    <div class="header">
+      <div class="header-title">活动参与用户</div>
+      <div class="header-right">
+        <a href="message_center.html">消息</a>
+        <a href="profile.html">我的</a>
+      </div>
+    </div>
 
-  <div class="filter-bar">
-    <select class="filter-select">
-      <option value="">选择活动</option>
-      <option value="1">春季促销活动</option>
-      <option value="2">品牌推广周</option>
-    </select>
-    <select class="filter-select">
-      <option value="">参与状态</option>
-      <option value="1">已报名</option>
-      <option value="2">已咨询</option>
-      <option value="3">已试驾</option>
-      <option value="4">已成交</option>
-    </select>
-    <input type="text" class="search-input" placeholder="搜索用户姓名、手机号">
+    <div class="filter-bar">
+      <select class="filter-select">
+        <option value="">选择活动</option>
+        <option value="1">春季促销活动</option>
+        <option value="2">品牌推广周</option>
+      </select>
+      <select class="filter-select">
+        <option value="">参与状态</option>
+        <option value="1">已报名</option>
+        <option value="2">已咨询</option>
+        <option value="3">已试驾</option>
+        <option value="4">已成交</option>
+      </select>
+      <input type="text" class="search-input" placeholder="搜索用户姓名、手机号">
+    </div>
+
+    <div class="user-list">
+      <div class="user-item">
+        <div class="user-header">
+          <div class="user-info">
+            <div class="user-avatar"></div>
+            <div class="user-name">张三</div>
+          </div>
+          <div class="user-status">已成交</div>
+        </div>
+        <div class="user-details">
+          <div class="detail-item">
+            <div class="detail-label">手机号</div>
+            <div class="detail-value">138****1234</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-label">参与时间</div>
+            <div class="detail-value">2024-03-15 14:30</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-label">咨询次数</div>
+            <div class="detail-value">3次</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-label">试驾时间</div>
+            <div class="detail-value">2024-03-16 10:00</div>
+          </div>
+        </div>
+        <div class="user-actions">
+          <a href="#" class="action-btn">查看详情</a>
+          <a href="#" class="action-btn">联系用户</a>
+          <a href="#" class="action-btn primary">标记成交</a>
+        </div>
+      </div>
+
+      <div class="user-item">
+        <div class="user-header">
+          <div class="user-info">
+            <div class="user-avatar"></div>
+            <div class="user-name">李四</div>
+          </div>
+          <div class="user-status">已试驾</div>
+        </div>
+        <div class="user-details">
+          <div class="detail-item">
+            <div class="detail-label">手机号</div>
+            <div class="detail-value">139****5678</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-label">参与时间</div>
+            <div class="detail-value">2024-03-14 16:45</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-label">咨询次数</div>
+            <div class="detail-value">2次</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-label">试驾时间</div>
+            <div class="detail-value">2024-03-15 15:30</div>
+          </div>
+        </div>
+        <div class="user-actions">
+          <a href="#" class="action-btn">查看详情</a>
+          <a href="#" class="action-btn">联系用户</a>
+          <a href="#" class="action-btn primary">标记成交</a>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="user-list">
-    <div class="user-item">
-      <div class="user-header">
-        <div class="user-info">
-          <div class="user-avatar"></div>
-          <div class="user-name">张三</div>
-        </div>
-        <div class="user-status">已成交</div>
-      </div>
-      <div class="user-details">
-        <div class="detail-item">
-          <div class="detail-label">手机号</div>
-          <div class="detail-value">138****1234</div>
-        </div>
-        <div class="detail-item">
-          <div class="detail-label">参与时间</div>
-          <div class="detail-value">2024-03-15 14:30</div>
-        </div>
-        <div class="detail-item">
-          <div class="detail-label">咨询次数</div>
-          <div class="detail-value">3次</div>
-        </div>
-        <div class="detail-item">
-          <div class="detail-label">试驾时间</div>
-          <div class="detail-value">2024-03-16 10:00</div>
-        </div>
-      </div>
-      <div class="user-actions">
-        <a href="#" class="action-btn">查看详情</a>
-        <a href="#" class="action-btn">联系用户</a>
-        <a href="#" class="action-btn primary">标记成交</a>
-      </div>
-    </div>
-
-    <div class="user-item">
-      <div class="user-header">
-        <div class="user-info">
-          <div class="user-avatar"></div>
-          <div class="user-name">李四</div>
-        </div>
-        <div class="user-status">已试驾</div>
-      </div>
-      <div class="user-details">
-        <div class="detail-item">
-          <div class="detail-label">手机号</div>
-          <div class="detail-value">139****5678</div>
-        </div>
-        <div class="detail-item">
-          <div class="detail-label">参与时间</div>
-          <div class="detail-value">2024-03-14 16:45</div>
-        </div>
-        <div class="detail-item">
-          <div class="detail-label">咨询次数</div>
-          <div class="detail-value">2次</div>
-        </div>
-        <div class="detail-item">
-          <div class="detail-label">试驾时间</div>
-          <div class="detail-value">2024-03-15 15:30</div>
-        </div>
-      </div>
-      <div class="user-actions">
-        <a href="#" class="action-btn">查看详情</a>
-        <a href="#" class="action-btn">联系用户</a>
-        <a href="#" class="action-btn primary">标记成交</a>
-      </div>
-    </div>
+  <!-- 底部统一TabBar -->
+  <div class="tabbar">
+    <a href="dashboard.html" class="tabbar-item"><span>🏠</span><div>首页</div></a>
+    <a href="activity_list.html" class="tabbar-item"><span>🎉</span><div>活动</div></a>
+    <a href="activity_stats.html" class="tabbar-item"><span>📊</span><div>数据</div></a>
+    <a href="profile.html" class="tabbar-item"><span>👤</span><div>我的</div></a>
   </div>
 </body>
 </html> 

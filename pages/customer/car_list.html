@@ -5,12 +5,15 @@
   <title>车主小程序 - 车辆管理</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <style>
-    body {
-      font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f7f9;
-    }
+    body { font-family: sans-serif; background: #f4f7f9; margin:0; padding-bottom: 56px; }
+    .navbar {height: 50px; background: #409eff; color: #fff; display: flex; align-items: center; justify-content: space-between; padding: 0 18px; font-size: 18px; position: fixed; top: 0; left: 0; right: 0; z-index: 10;}
+    .navbar-title {font-weight: bold; letter-spacing: 1px;}
+    .navbar-actions a {color: #fff; margin-left: 18px; font-size: 20px; text-decoration: none;}
+    .tabbar {position: fixed; left: 0; right: 0; bottom: 0; height: 56px; background: #fff; border-top: 1px solid #e3e8ee; display: flex; z-index: 20;}
+    .tabbar-item {flex: 1; text-align: center; color: #888; text-decoration: none; font-size: 13px; padding-top: 4px; transition: color 0.2s; display: flex; flex-direction: column; align-items: center; justify-content: center;}
+    .tabbar-item span {font-size: 22px; display: block; margin-bottom: 2px;}
+    .tabbar-item.active, .tabbar-item:hover {color: #409eff; font-weight: bold;}
+    .page-content { padding-top: 50px; padding-bottom: 60px; }
     .header {
       background: #fff;
       padding: 15px;
@@ -142,106 +145,123 @@
   </style>
 </head>
 <body>
-  <div class="header">
-    <div class="header-title">车辆管理</div>
-    <div class="header-right">
-      <a href="message_center.html">消息</a>
-      <a href="profile.html">我的</a>
+  <!-- 顶部统一导航栏 -->
+  <div class="navbar">
+    <div class="navbar-title">车主平台</div>
+    <div class="navbar-actions">
+      <a href="message_center.html">🔔</a>
+      <a href="profile.html">👤</a>
     </div>
   </div>
+  <div class="page-content" style="padding-top:50px;">
+    <div class="header">
+      <div class="header-title">车辆管理</div>
+      <div class="header-right">
+        <a href="message_center.html">消息</a>
+        <a href="profile.html">我的</a>
+      </div>
+    </div>
 
-  <div class="car-list">
-    <div class="car-item">
-      <div class="car-header">
-        <div class="car-name">宝马 3系 2023款</div>
-        <div class="car-status">正常</div>
+    <div class="car-list">
+      <div class="car-item">
+        <div class="car-header">
+          <div class="car-name">宝马 3系 2023款</div>
+          <div class="car-status">正常</div>
+        </div>
+        <div class="car-info">
+          <div class="info-item">
+            <div class="info-label">车牌号</div>
+            <div class="info-value">粤A12345</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">行驶里程</div>
+            <div class="info-value">12,345公里</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">上次保养</div>
+            <div class="info-value">2024-02-15</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">下次保养</div>
+            <div class="info-value">2024-08-15</div>
+          </div>
+        </div>
+        <div class="car-footer">
+          <div class="car-stats">
+            <div class="stat-item">
+              <div class="stat-value">3</div>
+              <div class="stat-label">维修次数</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">5</div>
+              <div class="stat-label">保养次数</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">4.8</div>
+              <div class="stat-label">评分</div>
+            </div>
+          </div>
+          <div class="car-actions">
+            <a href="car_detail.html" class="action-btn">查看详情</a>
+            <a href="#" class="action-btn danger">删除车辆</a>
+          </div>
+        </div>
       </div>
-      <div class="car-info">
-        <div class="info-item">
-          <div class="info-label">车牌号</div>
-          <div class="info-value">粤A12345</div>
+
+      <div class="car-item">
+        <div class="car-header">
+          <div class="car-name">奔驰 C级 2022款</div>
+          <div class="car-status">正常</div>
         </div>
-        <div class="info-item">
-          <div class="info-label">行驶里程</div>
-          <div class="info-value">12,345公里</div>
-        </div>
-        <div class="info-item">
-          <div class="info-label">上次保养</div>
-          <div class="info-value">2024-02-15</div>
-        </div>
-        <div class="info-item">
-          <div class="info-label">下次保养</div>
-          <div class="info-value">2024-08-15</div>
-        </div>
-      </div>
-      <div class="car-footer">
-        <div class="car-stats">
-          <div class="stat-item">
-            <div class="stat-value">3</div>
-            <div class="stat-label">维修次数</div>
+        <div class="car-info">
+          <div class="info-item">
+            <div class="info-label">车牌号</div>
+            <div class="info-value">粤B67890</div>
           </div>
-          <div class="stat-item">
-            <div class="stat-value">5</div>
-            <div class="stat-label">保养次数</div>
+          <div class="info-item">
+            <div class="info-label">行驶里程</div>
+            <div class="info-value">8,765公里</div>
           </div>
-          <div class="stat-item">
-            <div class="stat-value">4.8</div>
-            <div class="stat-label">评分</div>
+          <div class="info-item">
+            <div class="info-label">上次保养</div>
+            <div class="info-value">2024-01-20</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">下次保养</div>
+            <div class="info-value">2024-07-20</div>
           </div>
         </div>
-        <div class="car-actions">
-          <a href="car_detail.html" class="action-btn">查看详情</a>
-          <a href="#" class="action-btn danger">删除车辆</a>
+        <div class="car-footer">
+          <div class="car-stats">
+            <div class="stat-item">
+              <div class="stat-value">2</div>
+              <div class="stat-label">维修次数</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">3</div>
+              <div class="stat-label">保养次数</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">4.5</div>
+              <div class="stat-label">评分</div>
+            </div>
+          </div>
+          <div class="car-actions">
+            <a href="car_detail.html" class="action-btn">查看详情</a>
+            <a href="#" class="action-btn danger">删除车辆</a>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="car-item">
-      <div class="car-header">
-        <div class="car-name">奔驰 C级 2022款</div>
-        <div class="car-status">正常</div>
-      </div>
-      <div class="car-info">
-        <div class="info-item">
-          <div class="info-label">车牌号</div>
-          <div class="info-value">粤B67890</div>
-        </div>
-        <div class="info-item">
-          <div class="info-label">行驶里程</div>
-          <div class="info-value">8,765公里</div>
-        </div>
-        <div class="info-item">
-          <div class="info-label">上次保养</div>
-          <div class="info-value">2024-01-20</div>
-        </div>
-        <div class="info-item">
-          <div class="info-label">下次保养</div>
-          <div class="info-value">2024-07-20</div>
-        </div>
-      </div>
-      <div class="car-footer">
-        <div class="car-stats">
-          <div class="stat-item">
-            <div class="stat-value">2</div>
-            <div class="stat-label">维修次数</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-value">3</div>
-            <div class="stat-label">保养次数</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-value">4.5</div>
-            <div class="stat-label">评分</div>
-          </div>
-        </div>
-        <div class="car-actions">
-          <a href="car_detail.html" class="action-btn">查看详情</a>
-          <a href="#" class="action-btn danger">删除车辆</a>
-        </div>
-      </div>
-    </div>
+    <a href="#" class="add-car">+</a>
   </div>
-
-  <a href="#" class="add-car">+</a>
+  <!-- 底部统一TabBar -->
+  <div class="tabbar">
+    <a href="home.html" class="tabbar-item"><span>🏠</span><div>首页</div></a>
+    <a href="car_select.html" class="tabbar-item"><span>🚗</span><div>选车</div></a>
+    <a href="order_list.html" class="tabbar-item"><span>📋</span><div>订单</div></a>
+    <a href="profile.html" class="tabbar-item"><span>👤</span><div>我的</div></a>
+  </div>
 </body>
 </html> 

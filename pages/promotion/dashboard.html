@@ -8,8 +8,70 @@
     body {
       font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
       margin: 0;
-      padding: 0;
+      padding-bottom: 56px;
       background: #f4f7f9;
+    }
+    .navbar {
+      height: 50px;
+      background: #409eff;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 18px;
+      font-size: 18px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+    }
+    .navbar-title {
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    .navbar-actions a {
+      color: #fff;
+      margin-left: 18px;
+      font-size: 20px;
+      text-decoration: none;
+    }
+    .tabbar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 56px;
+      background: #fff;
+      border-top: 1px solid #e3e8ee;
+      display: flex;
+      z-index: 20;
+    }
+    .tabbar-item {
+      flex: 1;
+      text-align: center;
+      color: #888;
+      text-decoration: none;
+      font-size: 13px;
+      padding-top: 4px;
+      transition: color 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .tabbar-item span {
+      font-size: 22px;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .tabbar-item.active, .tabbar-item:hover {
+      color: #409eff;
+      font-weight: bold;
+    }
+    .page-content {
+      padding-top: 50px;
+      padding-bottom: 60px;
     }
     .header {
       background: #fff;
@@ -174,108 +236,125 @@
   </style>
 </head>
 <body>
-  <div class="header">
-    <div class="header-title">品牌推广</div>
-    <div class="header-right">
-      <a href="message_center.html">消息</a>
-      <a href="profile.html">我的</a>
+  <!-- 顶部统一导航栏 -->
+  <div class="navbar">
+    <div class="navbar-title">品宣平台</div>
+    <div class="navbar-actions">
+      <a href="message_center.html">🔔</a>
+      <a href="profile.html">👤</a>
     </div>
   </div>
+  <div class="page-content" style="padding-top:50px;">
+    <div class="header">
+      <div class="header-title">品牌推广</div>
+      <div class="header-right">
+        <a href="message_center.html">消息</a>
+        <a href="profile.html">我的</a>
+      </div>
+    </div>
 
-  <div class="stats">
-    <div class="stat-item">
-      <div class="stat-value">12</div>
-      <div class="stat-label">进行中活动</div>
+    <div class="stats">
+      <div class="stat-item">
+        <div class="stat-value">12</div>
+        <div class="stat-label">进行中活动</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">5</div>
+        <div class="stat-label">合作品牌</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">1,234</div>
+        <div class="stat-label">活动参与人数</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">¥50,000</div>
+        <div class="stat-label">活动总预算</div>
+      </div>
     </div>
-    <div class="stat-item">
-      <div class="stat-value">5</div>
-      <div class="stat-label">合作品牌</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-value">1,234</div>
-      <div class="stat-label">活动参与人数</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-value">¥50,000</div>
-      <div class="stat-label">活动总预算</div>
-    </div>
-  </div>
 
-  <div class="menu">
-    <a href="activity_list.html" class="menu-item">
-      <i>🎯</i>
-      <span>活动管理</span>
-    </a>
-    <a href="brand_list.html" class="menu-item">
-      <i>🏢</i>
-      <span>品牌管理</span>
-    </a>
-    <a href="#" class="menu-item">
-      <i>📊</i>
-      <span>数据统计</span>
-    </a>
-    <a href="#" class="menu-item">
-      <i>📝</i>
-      <span>活动报告</span>
-    </a>
-  </div>
-
-  <div class="section">
-    <div class="section-title">
-      <span>进行中活动</span>
-      <a href="activity_list.html">查看全部</a>
+    <div class="menu">
+      <a href="activity_list.html" class="menu-item">
+        <i>��</i>
+        <span>活动管理</span>
+      </a>
+      <a href="brand_list.html" class="menu-item">
+        <i>🏢</i>
+        <span>品牌管理</span>
+      </a>
+      <a href="#" class="menu-item">
+        <i>📊</i>
+        <span>数据统计</span>
+      </a>
+      <a href="#" class="menu-item">
+        <i>📝</i>
+        <span>活动报告</span>
+      </a>
     </div>
-    <ul class="activity-list">
-      <li class="activity-item">
-        <div class="activity-item-left">
-          <div class="activity-item-icon">🎯</div>
-          <div class="activity-item-info">
-            <div class="activity-item-title">春季促销活动</div>
-            <div class="activity-item-desc">2024-03-01 至 2024-03-31</div>
+
+    <div class="section">
+      <div class="section-title">
+        <span>进行中活动</span>
+        <a href="activity_list.html">查看全部</a>
+      </div>
+      <ul class="activity-list">
+        <li class="activity-item">
+          <div class="activity-item-left">
+            <div class="activity-item-icon">🎯</div>
+            <div class="activity-item-info">
+              <div class="activity-item-title">春季促销活动</div>
+              <div class="activity-item-desc">2024-03-01 至 2024-03-31</div>
+            </div>
           </div>
-        </div>
-        <div class="activity-item-right">进行中</div>
-      </li>
-      <li class="activity-item">
-        <div class="activity-item-left">
-          <div class="activity-item-icon">🎯</div>
-          <div class="activity-item-info">
-            <div class="activity-item-title">品牌推广周</div>
-            <div class="activity-item-desc">2024-03-15 至 2024-03-21</div>
+          <div class="activity-item-right">进行中</div>
+        </li>
+        <li class="activity-item">
+          <div class="activity-item-left">
+            <div class="activity-item-icon">🎯</div>
+            <div class="activity-item-info">
+              <div class="activity-item-title">品牌推广周</div>
+              <div class="activity-item-desc">2024-03-15 至 2024-03-21</div>
+            </div>
           </div>
-        </div>
-        <div class="activity-item-right">进行中</div>
-      </li>
-    </ul>
-  </div>
+          <div class="activity-item-right">进行中</div>
+        </li>
+      </ul>
+    </div>
 
-  <div class="section">
-    <div class="section-title">
-      <span>合作品牌</span>
-      <a href="brand_list.html">查看全部</a>
+    <div class="section">
+      <div class="section-title">
+        <span>合作品牌</span>
+        <a href="brand_list.html">查看全部</a>
+      </div>
+      <div class="brand-list">
+        <div class="brand-item">
+          <div class="brand-logo"></div>
+          <div class="brand-name">宝马</div>
+          <div class="brand-desc">豪华汽车品牌</div>
+        </div>
+        <div class="brand-item">
+          <div class="brand-logo"></div>
+          <div class="brand-name">奔驰</div>
+          <div class="brand-desc">豪华汽车品牌</div>
+        </div>
+        <div class="brand-item">
+          <div class="brand-logo"></div>
+          <div class="brand-name">奥迪</div>
+          <div class="brand-desc">豪华汽车品牌</div>
+        </div>
+        <div class="brand-item">
+          <div class="brand-logo"></div>
+          <div class="brand-name">保时捷</div>
+          <div class="brand-desc">豪华汽车品牌</div>
+        </div>
+      </div>
     </div>
-    <div class="brand-list">
-      <div class="brand-item">
-        <div class="brand-logo"></div>
-        <div class="brand-name">宝马</div>
-        <div class="brand-desc">豪华汽车品牌</div>
-      </div>
-      <div class="brand-item">
-        <div class="brand-logo"></div>
-        <div class="brand-name">奔驰</div>
-        <div class="brand-desc">豪华汽车品牌</div>
-      </div>
-      <div class="brand-item">
-        <div class="brand-logo"></div>
-        <div class="brand-name">奥迪</div>
-        <div class="brand-desc">豪华汽车品牌</div>
-      </div>
-      <div class="brand-item">
-        <div class="brand-logo"></div>
-        <div class="brand-name">保时捷</div>
-        <div class="brand-desc">豪华汽车品牌</div>
-      </div>
-    </div>
+  </div>
+  <!-- 底部统一TabBar -->
+  <div class="tabbar">
+    <a href="dashboard.html" class="tabbar-item active"><span>🏠</span><div>首页</div></a>
+    <a href="activity_list.html" class="tabbar-item"><span>🎉</span><div>活动</div></a>
+    <a href="activity_stats.html" class="tabbar-item"><span>📊</span><div>数据</div></a>
+    <a href="profile.html" class="tabbar-item"><span>👤</span><div>我的</div></a>
   </div>
 </body>
 </html> 

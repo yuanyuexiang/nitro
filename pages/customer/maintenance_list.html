@@ -10,7 +10,16 @@
       margin: 0;
       padding: 0;
       background: #f4f7f9;
+      padding-bottom: 56px;
     }
+    .navbar {height: 50px; background: #409eff; color: #fff; display: flex; align-items: center; justify-content: space-between; padding: 0 18px; font-size: 18px; position: fixed; top: 0; left: 0; right: 0; z-index: 10;}
+    .navbar-title {font-weight: bold; letter-spacing: 1px;}
+    .navbar-actions a {color: #fff; margin-left: 18px; font-size: 20px; text-decoration: none;}
+    .tabbar {position: fixed; left: 0; right: 0; bottom: 0; height: 56px; background: #fff; border-top: 1px solid #e3e8ee; display: flex; z-index: 20;}
+    .tabbar-item {flex: 1; text-align: center; color: #888; text-decoration: none; font-size: 13px; padding-top: 4px; transition: color 0.2s; display: flex; flex-direction: column; align-items: center; justify-content: center;}
+    .tabbar-item span {font-size: 22px; display: block; margin-bottom: 2px;}
+    .tabbar-item.active, .tabbar-item:hover {color: #409eff; font-weight: bold;}
+    .page-content { padding-top: 50px; padding-bottom: 60px; }
     .header {
       background: #fff;
       padding: 15px;
@@ -147,90 +156,107 @@
   </style>
 </head>
 <body>
-  <div class="header">
-    <div class="header-title">保养记录</div>
-    <div class="header-right">
-      <a href="message_center.html">消息</a>
-      <a href="profile.html">我的</a>
+  <!-- 顶部统一导航栏 -->
+  <div class="navbar">
+    <div class="navbar-title">车主平台</div>
+    <div class="navbar-actions">
+      <a href="message_center.html">🔔</a>
+      <a href="profile.html">👤</a>
     </div>
   </div>
-
-  <div class="search-bar">
-    <input type="text" class="search-input" placeholder="搜索保养项目、门店">
-  </div>
-
-  <div class="filter-bar">
-    <button class="filter-btn active">全部</button>
-    <button class="filter-btn">待保养</button>
-    <button class="filter-btn">保养中</button>
-    <button class="filter-btn">已完成</button>
-    <button class="filter-btn">已取消</button>
-  </div>
-
-  <div class="maintenance-list">
-    <div class="maintenance-item">
-      <div class="maintenance-header">
-        <div class="maintenance-title">常规保养</div>
-        <div class="maintenance-status">已完成</div>
-      </div>
-      <div class="maintenance-info">
-        <div class="info-item">
-          <div class="info-label">保养门店</div>
-          <div class="info-value">某某汽车维修中心</div>
-        </div>
-        <div class="info-item">
-          <div class="info-label">保养项目</div>
-          <div class="info-value">常规保养</div>
-        </div>
-        <div class="info-item">
-          <div class="info-label">保养费用</div>
-          <div class="info-value">¥599.00</div>
-        </div>
-        <div class="info-item">
-          <div class="info-label">保养技师</div>
-          <div class="info-value">张师傅</div>
-        </div>
-      </div>
-      <div class="maintenance-footer">
-        <div class="maintenance-time">保养时间：2024-02-15 10:00</div>
-        <div class="maintenance-actions">
-          <a href="maintenance_detail.html" class="action-btn">查看详情</a>
-          <a href="#" class="action-btn">评价</a>
-        </div>
+  <div class="page-content" style="padding-top:50px;">
+    <div class="header">
+      <div class="header-title">保养记录</div>
+      <div class="header-right">
+        <a href="message_center.html">消息</a>
+        <a href="profile.html">我的</a>
       </div>
     </div>
 
-    <div class="maintenance-item">
-      <div class="maintenance-header">
-        <div class="maintenance-title">空调系统保养</div>
-        <div class="maintenance-status">已完成</div>
+    <div class="search-bar">
+      <input type="text" class="search-input" placeholder="搜索保养项目、门店">
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-btn active">全部</button>
+      <button class="filter-btn">待保养</button>
+      <button class="filter-btn">保养中</button>
+      <button class="filter-btn">已完成</button>
+      <button class="filter-btn">已取消</button>
+    </div>
+
+    <div class="maintenance-list">
+      <div class="maintenance-item">
+        <div class="maintenance-header">
+          <div class="maintenance-title">常规保养</div>
+          <div class="maintenance-status">已完成</div>
+        </div>
+        <div class="maintenance-info">
+          <div class="info-item">
+            <div class="info-label">保养门店</div>
+            <div class="info-value">某某汽车维修中心</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">保养项目</div>
+            <div class="info-value">常规保养</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">保养费用</div>
+            <div class="info-value">¥599.00</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">保养技师</div>
+            <div class="info-value">张师傅</div>
+          </div>
+        </div>
+        <div class="maintenance-footer">
+          <div class="maintenance-time">保养时间：2024-02-15 10:00</div>
+          <div class="maintenance-actions">
+            <a href="maintenance_detail.html" class="action-btn">查看详情</a>
+            <a href="#" class="action-btn">评价</a>
+          </div>
+        </div>
       </div>
-      <div class="maintenance-info">
-        <div class="info-item">
-          <div class="info-label">保养门店</div>
-          <div class="info-value">某某汽车维修中心</div>
+
+      <div class="maintenance-item">
+        <div class="maintenance-header">
+          <div class="maintenance-title">空调系统保养</div>
+          <div class="maintenance-status">已完成</div>
         </div>
-        <div class="info-item">
-          <div class="info-label">保养项目</div>
-          <div class="info-value">空调系统保养</div>
+        <div class="maintenance-info">
+          <div class="info-item">
+            <div class="info-label">保养门店</div>
+            <div class="info-value">某某汽车维修中心</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">保养项目</div>
+            <div class="info-value">空调系统保养</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">保养费用</div>
+            <div class="info-value">¥399.00</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">保养技师</div>
+            <div class="info-value">李师傅</div>
+          </div>
         </div>
-        <div class="info-item">
-          <div class="info-label">保养费用</div>
-          <div class="info-value">¥399.00</div>
-        </div>
-        <div class="info-item">
-          <div class="info-label">保养技师</div>
-          <div class="info-value">李师傅</div>
-        </div>
-      </div>
-      <div class="maintenance-footer">
-        <div class="maintenance-time">保养时间：2024-01-20 15:30</div>
-        <div class="maintenance-actions">
-          <a href="maintenance_detail.html" class="action-btn">查看详情</a>
-          <a href="#" class="action-btn">评价</a>
+        <div class="maintenance-footer">
+          <div class="maintenance-time">保养时间：2024-01-20 15:30</div>
+          <div class="maintenance-actions">
+            <a href="maintenance_detail.html" class="action-btn">查看详情</a>
+            <a href="#" class="action-btn">评价</a>
+          </div>
         </div>
       </div>
     </div>
+  </div>
+  <!-- 底部统一TabBar -->
+  <div class="tabbar">
+    <a href="home.html" class="tabbar-item"><span>🏠</span><div>首页</div></a>
+    <a href="car_select.html" class="tabbar-item"><span>🚗</span><div>选车</div></a>
+    <a href="order_list.html" class="tabbar-item"><span>📋</span><div>订单</div></a>
+    <a href="profile.html" class="tabbar-item"><span>👤</span><div>我的</div></a>
   </div>
 </body>
 </html> 

@@ -5,12 +5,15 @@
   <title>品牌推广小程序 - 活动评价管理</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <style>
-    body {
-      font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f7f9;
-    }
+    body { font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif; margin: 0; padding-bottom: 56px; background: #f4f7f9; }
+    .navbar {height: 50px; background: #409eff; color: #fff; display: flex; align-items: center; justify-content: space-between; padding: 0 18px; font-size: 18px; position: fixed; top: 0; left: 0; right: 0; z-index: 10;}
+    .navbar-title {font-weight: bold; letter-spacing: 1px;}
+    .navbar-actions a {color: #fff; margin-left: 18px; font-size: 20px; text-decoration: none;}
+    .tabbar {position: fixed; left: 0; right: 0; bottom: 0; height: 56px; background: #fff; border-top: 1px solid #e3e8ee; display: flex; z-index: 20;}
+    .tabbar-item {flex: 1; text-align: center; color: #888; text-decoration: none; font-size: 13px; padding-top: 4px; transition: color 0.2s; display: flex; flex-direction: column; align-items: center; justify-content: center;}
+    .tabbar-item span {font-size: 22px; display: block; margin-bottom: 2px;}
+    .tabbar-item.active, .tabbar-item:hover {color: #409eff; font-weight: bold;}
+    .page-content { padding-top: 50px; padding-bottom: 60px; }
     .header {
       background: #fff;
       padding: 15px;
@@ -156,96 +159,113 @@
   </style>
 </head>
 <body>
-  <div class="header">
-    <div class="header-title">活动评价管理</div>
-    <div class="header-right">
-      <a href="message_center.html">消息</a>
-      <a href="profile.html">我的</a>
+  <!-- 顶部统一导航栏 -->
+  <div class="navbar">
+    <div class="navbar-title">品宣平台</div>
+    <div class="navbar-actions">
+      <a href="message_center.html">🔔</a>
+      <a href="profile.html">👤</a>
     </div>
   </div>
+  <div class="page-content" style="padding-top:50px;">
+    <div class="header">
+      <div class="header-title">活动评价管理</div>
+      <div class="header-right">
+        <a href="message_center.html">消息</a>
+        <a href="profile.html">我的</a>
+      </div>
+    </div>
 
-  <div class="filter-bar">
-    <select class="filter-select">
-      <option value="">选择活动</option>
-      <option value="1">春季促销活动</option>
-      <option value="2">品牌推广周</option>
-    </select>
-    <select class="filter-select">
-      <option value="">评价状态</option>
-      <option value="1">已回复</option>
-      <option value="2">未回复</option>
-    </select>
-    <select class="filter-select">
-      <option value="">评分</option>
-      <option value="5">5星</option>
-      <option value="4">4星</option>
-      <option value="3">3星</option>
-      <option value="2">2星</option>
-      <option value="1">1星</option>
-    </select>
+    <div class="filter-bar">
+      <select class="filter-select">
+        <option value="">选择活动</option>
+        <option value="1">春季促销活动</option>
+        <option value="2">品牌推广周</option>
+      </select>
+      <select class="filter-select">
+        <option value="">评价状态</option>
+        <option value="1">已回复</option>
+        <option value="2">未回复</option>
+      </select>
+      <select class="filter-select">
+        <option value="">评分</option>
+        <option value="5">5星</option>
+        <option value="4">4星</option>
+        <option value="3">3星</option>
+        <option value="2">2星</option>
+        <option value="1">1星</option>
+      </select>
+    </div>
+
+    <div class="review-list">
+      <div class="review-item">
+        <div class="review-header">
+          <div class="reviewer-info">
+            <div class="reviewer-avatar"></div>
+            <div class="reviewer-name">张三</div>
+          </div>
+          <div class="review-time">2024-03-15 14:30</div>
+        </div>
+        <div class="review-rating">
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+        </div>
+        <div class="review-content">
+          活动组织得很好，工作人员服务态度很好，试驾体验很棒，整体感受非常满意。
+        </div>
+        <div class="review-images">
+          <div class="review-image"></div>
+          <div class="review-image"></div>
+        </div>
+        <div class="review-reply">
+          <div class="reply-header">
+            <div class="reply-author">活动管理员</div>
+            <div class="reply-time">2024-03-15 15:00</div>
+          </div>
+          <div class="reply-content">
+            感谢您的参与和好评，我们会继续努力提供更好的服务！
+          </div>
+        </div>
+        <div class="review-actions">
+          <a href="#" class="action-btn">编辑回复</a>
+          <a href="#" class="action-btn danger">删除评价</a>
+        </div>
+      </div>
+
+      <div class="review-item">
+        <div class="review-header">
+          <div class="reviewer-info">
+            <div class="reviewer-avatar"></div>
+            <div class="reviewer-name">李四</div>
+          </div>
+          <div class="review-time">2024-03-14 16:45</div>
+        </div>
+        <div class="review-rating">
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">☆</span>
+        </div>
+        <div class="review-content">
+          活动整体不错，但是试驾时间安排有点紧张，希望能有更多时间体验。
+        </div>
+        <div class="review-actions">
+          <a href="#" class="action-btn primary">回复评价</a>
+          <a href="#" class="action-btn danger">删除评价</a>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="review-list">
-    <div class="review-item">
-      <div class="review-header">
-        <div class="reviewer-info">
-          <div class="reviewer-avatar"></div>
-          <div class="reviewer-name">张三</div>
-        </div>
-        <div class="review-time">2024-03-15 14:30</div>
-      </div>
-      <div class="review-rating">
-        <span class="star">★</span>
-        <span class="star">★</span>
-        <span class="star">★</span>
-        <span class="star">★</span>
-        <span class="star">★</span>
-      </div>
-      <div class="review-content">
-        活动组织得很好，工作人员服务态度很好，试驾体验很棒，整体感受非常满意。
-      </div>
-      <div class="review-images">
-        <div class="review-image"></div>
-        <div class="review-image"></div>
-      </div>
-      <div class="review-reply">
-        <div class="reply-header">
-          <div class="reply-author">活动管理员</div>
-          <div class="reply-time">2024-03-15 15:00</div>
-        </div>
-        <div class="reply-content">
-          感谢您的参与和好评，我们会继续努力提供更好的服务！
-        </div>
-      </div>
-      <div class="review-actions">
-        <a href="#" class="action-btn">编辑回复</a>
-        <a href="#" class="action-btn danger">删除评价</a>
-      </div>
-    </div>
-
-    <div class="review-item">
-      <div class="review-header">
-        <div class="reviewer-info">
-          <div class="reviewer-avatar"></div>
-          <div class="reviewer-name">李四</div>
-        </div>
-        <div class="review-time">2024-03-14 16:45</div>
-      </div>
-      <div class="review-rating">
-        <span class="star">★</span>
-        <span class="star">★</span>
-        <span class="star">★</span>
-        <span class="star">★</span>
-        <span class="star">☆</span>
-      </div>
-      <div class="review-content">
-        活动整体不错，但是试驾时间安排有点紧张，希望能有更多时间体验。
-      </div>
-      <div class="review-actions">
-        <a href="#" class="action-btn primary">回复评价</a>
-        <a href="#" class="action-btn danger">删除评价</a>
-      </div>
-    </div>
+  <!-- 底部统一TabBar -->
+  <div class="tabbar">
+    <a href="dashboard.html" class="tabbar-item"><span>🏠</span><div>首页</div></a>
+    <a href="activity_list.html" class="tabbar-item"><span>🎉</span><div>活动</div></a>
+    <a href="activity_stats.html" class="tabbar-item"><span>📊</span><div>数据</div></a>
+    <a href="profile.html" class="tabbar-item"><span>👤</span><div>我的</div></a>
   </div>
 </body>
 </html> 

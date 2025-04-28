@@ -8,8 +8,70 @@
     body {
       font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
       margin: 0;
-      padding: 0;
+      padding-bottom: 56px;
       background: #f4f7f9;
+    }
+    .navbar {
+      height: 50px;
+      background: #409eff;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 18px;
+      font-size: 18px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+    }
+    .navbar-title {
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    .navbar-actions a {
+      color: #fff;
+      margin-left: 18px;
+      font-size: 20px;
+      text-decoration: none;
+    }
+    .tabbar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 56px;
+      background: #fff;
+      border-top: 1px solid #e3e8ee;
+      display: flex;
+      z-index: 20;
+    }
+    .tabbar-item {
+      flex: 1;
+      text-align: center;
+      color: #888;
+      text-decoration: none;
+      font-size: 13px;
+      padding-top: 4px;
+      transition: color 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .tabbar-item span {
+      font-size: 22px;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .tabbar-item.active, .tabbar-item:hover {
+      color: #409eff;
+      font-weight: bold;
+    }
+    .page-content {
+      padding-top: 50px;
+      padding-bottom: 60px;
     }
     .header {
       background: #fff;
@@ -163,94 +225,111 @@
   </style>
 </head>
 <body>
-  <div class="header">
-    <div class="header-title">活动列表</div>
-    <div class="header-right">
-      <a href="message_center.html">消息</a>
-      <a href="profile.html">我的</a>
+  <!-- 顶部统一导航栏 -->
+  <div class="navbar">
+    <div class="navbar-title">品宣平台</div>
+    <div class="navbar-actions">
+      <a href="message_center.html">🔔</a>
+      <a href="profile.html">👤</a>
     </div>
   </div>
-
-  <div class="search-bar">
-    <input type="text" class="search-input" placeholder="搜索活动名称、品牌">
-  </div>
-
-  <div class="filter-bar">
-    <button class="filter-btn active">全部</button>
-    <button class="filter-btn">进行中</button>
-    <button class="filter-btn">已结束</button>
-    <button class="filter-btn">未开始</button>
-    <button class="filter-btn">已取消</button>
-  </div>
-
-  <div class="activity-list">
-    <div class="activity-item">
-      <div class="activity-header">
-        <div class="activity-title">春季促销活动</div>
-        <div class="activity-status">进行中</div>
-      </div>
-      <div class="activity-info">
-        <div class="info-item">
-          <div class="info-label">活动品牌</div>
-          <div class="info-value">宝马</div>
-        </div>
-        <div class="info-item">
-          <div class="info-label">活动类型</div>
-          <div class="info-value">促销活动</div>
-        </div>
-        <div class="info-item">
-          <div class="info-label">活动预算</div>
-          <div class="info-value">¥20,000</div>
-        </div>
-        <div class="info-item">
-          <div class="info-label">参与人数</div>
-          <div class="info-value">500人</div>
-        </div>
-      </div>
-      <div class="activity-footer">
-        <div class="activity-time">活动时间：2024-03-01 至 2024-03-31</div>
-        <div class="activity-actions">
-          <a href="activity_detail.html" class="action-btn">查看详情</a>
-          <a href="#" class="action-btn">编辑</a>
-          <a href="#" class="action-btn danger">取消活动</a>
-        </div>
+  <div class="page-content" style="padding-top:50px;">
+    <div class="header">
+      <div class="header-title">活动列表</div>
+      <div class="header-right">
+        <a href="message_center.html">消息</a>
+        <a href="profile.html">我的</a>
       </div>
     </div>
 
-    <div class="activity-item">
-      <div class="activity-header">
-        <div class="activity-title">品牌推广周</div>
-        <div class="activity-status">进行中</div>
+    <div class="search-bar">
+      <input type="text" class="search-input" placeholder="搜索活动名称、品牌">
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-btn active">全部</button>
+      <button class="filter-btn">进行中</button>
+      <button class="filter-btn">已结束</button>
+      <button class="filter-btn">未开始</button>
+      <button class="filter-btn">已取消</button>
+    </div>
+
+    <div class="activity-list">
+      <div class="activity-item">
+        <div class="activity-header">
+          <div class="activity-title">春季促销活动</div>
+          <div class="activity-status">进行中</div>
+        </div>
+        <div class="activity-info">
+          <div class="info-item">
+            <div class="info-label">活动品牌</div>
+            <div class="info-value">宝马</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">活动类型</div>
+            <div class="info-value">促销活动</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">活动预算</div>
+            <div class="info-value">¥20,000</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">参与人数</div>
+            <div class="info-value">500人</div>
+          </div>
+        </div>
+        <div class="activity-footer">
+          <div class="activity-time">活动时间：2024-03-01 至 2024-03-31</div>
+          <div class="activity-actions">
+            <a href="activity_detail.html" class="action-btn">查看详情</a>
+            <a href="#" class="action-btn">编辑</a>
+            <a href="#" class="action-btn danger">取消活动</a>
+          </div>
+        </div>
       </div>
-      <div class="activity-info">
-        <div class="info-item">
-          <div class="info-label">活动品牌</div>
-          <div class="info-value">奔驰</div>
+
+      <div class="activity-item">
+        <div class="activity-header">
+          <div class="activity-title">品牌推广周</div>
+          <div class="activity-status">进行中</div>
         </div>
-        <div class="info-item">
-          <div class="info-label">活动类型</div>
-          <div class="info-value">品牌推广</div>
+        <div class="activity-info">
+          <div class="info-item">
+            <div class="info-label">活动品牌</div>
+            <div class="info-value">奔驰</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">活动类型</div>
+            <div class="info-value">品牌推广</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">活动预算</div>
+            <div class="info-value">¥30,000</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">参与人数</div>
+            <div class="info-value">300人</div>
+          </div>
         </div>
-        <div class="info-item">
-          <div class="info-label">活动预算</div>
-          <div class="info-value">¥30,000</div>
-        </div>
-        <div class="info-item">
-          <div class="info-label">参与人数</div>
-          <div class="info-value">300人</div>
-        </div>
-      </div>
-      <div class="activity-footer">
-        <div class="activity-time">活动时间：2024-03-15 至 2024-03-21</div>
-        <div class="activity-actions">
-          <a href="activity_detail.html" class="action-btn">查看详情</a>
-          <a href="#" class="action-btn">编辑</a>
-          <a href="#" class="action-btn danger">取消活动</a>
+        <div class="activity-footer">
+          <div class="activity-time">活动时间：2024-03-15 至 2024-03-21</div>
+          <div class="activity-actions">
+            <a href="activity_detail.html" class="action-btn">查看详情</a>
+            <a href="#" class="action-btn">编辑</a>
+            <a href="#" class="action-btn danger">取消活动</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <a href="#" class="add-activity">+</a>
+    <a href="#" class="add-activity">+</a>
+  </div>
+  <!-- 底部统一TabBar -->
+  <div class="tabbar">
+    <a href="dashboard.html" class="tabbar-item"><span>🏠</span><div>首页</div></a>
+    <a href="activity_list.html" class="tabbar-item active"><span>🎉</span><div>活动</div></a>
+    <a href="activity_stats.html" class="tabbar-item"><span>📊</span><div>数据</div></a>
+    <a href="profile.html" class="tabbar-item"><span>👤</span><div>我的</div></a>
+  </div>
 </body>
 </html> 

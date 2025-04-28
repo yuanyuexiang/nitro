@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>汽车服务平台 - 导航页</title>
+  <title>轻改装平台 - 导航页</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <style>
     body {
@@ -83,11 +83,31 @@
 </head>
 <body>
   <div class="header">
-    <div class="header-title">汽车服务平台</div>
+    <div class="header-title">轻改装平台</div>
     <div class="header-desc">一站式汽车服务解决方案</div>
   </div>
 
   <div class="system-list">
+    <a href="pages/admin/dashboard.html" class="system-item">
+      <div class="system-icon">⚙️</div>
+      <div class="system-title">轻改装平台管理系统</div>
+      <div class="system-desc">管理平台配置、用户权限和系统设置</div>
+      <div class="page-list">
+        <a href="pages/admin/login.html" class="page-item">登录</a>
+        <a href="pages/admin/dashboard.html" class="page-item">首页</a>
+        <a href="pages/admin/user_list.html" class="page-item">用户管理</a>
+        <a href="pages/admin/role_list.html" class="page-item">角色管理</a>
+        <a href="pages/admin/supplier_review.html" class="page-item">供应商审核</a>
+        <a href="pages/admin/supplier_list.html" class="page-item">供应商管理</a>
+        <a href="pages/admin/supplier_detail.html" class="page-item">供应商详情</a>
+        <a href="pages/admin/store_list.html" class="page-item">门店管理</a>
+        <a href="pages/admin/product_list.html" class="page-item">商品管理</a>
+        <a href="pages/admin/order_list.html" class="page-item">订单管理</a>
+        <a href="pages/admin/system_config.html" class="page-item">系统配置</a>
+        <a href="pages/admin/log_list.html" class="page-item">日志管理</a>
+        <a href="pages/admin/message_center.html" class="page-item">消息中心</a>
+      </div>
+    </a>
     <a href="pages/supplier/dashboard.html" class="system-item">
       <div class="system-icon">🏭</div>
       <div class="system-title">供应商小程序</div>
@@ -96,12 +116,13 @@
         <a href="pages/supplier/login.html" class="page-item">登录</a>
         <a href="pages/supplier/dashboard.html" class="page-item">首页</a>
         <a href="pages/supplier/product_list.html" class="page-item">产品管理</a>
+        <a href="pages/supplier/product_detail.html" class="page-item">产品详情</a>
         <a href="pages/supplier/order_list.html" class="page-item">订单管理</a>
         <a href="pages/supplier/settlement_list.html" class="page-item">结算管理</a>
         <a href="pages/supplier/profile.html" class="page-item">个人中心</a>
+        <a href="pages/supplier/message_center.html" class="page-item">消息中心</a>
       </div>
     </a>
-
     <a href="pages/store/dashboard.html" class="system-item">
       <div class="system-icon">🏪</div>
       <div class="system-title">门店小程序</div>
@@ -109,13 +130,24 @@
       <div class="page-list">
         <a href="pages/store/login.html" class="page-item">登录</a>
         <a href="pages/store/dashboard.html" class="page-item">首页</a>
+        <a href="pages/store/product_list.html" class="page-item">商品列表</a>
+        <a href="pages/store/product_detail.html" class="page-item">商品详情</a>
+        <a href="pages/store/order_list.html" class="page-item">订单列表</a>
+        <a href="pages/store/order_detail.html" class="page-item">订单详情</a>
+        <a href="pages/store/order_confirm.html" class="page-item">订单确认</a>
+        <a href="pages/store/cart.html" class="page-item">购物车</a>
         <a href="pages/store/service_list.html" class="page-item">服务管理</a>
         <a href="pages/store/appointment_list.html" class="page-item">预约管理</a>
         <a href="pages/store/review_list.html" class="page-item">评价管理</a>
         <a href="pages/store/profile.html" class="page-item">个人中心</a>
+        <a href="pages/store/message_center.html" class="page-item">消息中心</a>
+        <a href="pages/store/customer_list.html" class="page-item">客户列表</a>
+        <a href="pages/store/customer_detail.html" class="page-item">客户详情</a>
+        <a href="pages/store/aftersale_list.html" class="page-item">售后列表</a>
+        <a href="pages/store/aftersale_detail.html" class="page-item">售后详情</a>
+        <a href="pages/store/coupon_center.html" class="page-item">优惠券中心</a>
       </div>
     </a>
-
     <a href="pages/customer/home.html" class="system-item">
       <div class="system-icon">🚗</div>
       <div class="system-title">车主小程序</div>
@@ -123,36 +155,34 @@
       <div class="page-list">
         <a href="pages/customer/login.html" class="page-item">登录</a>
         <a href="pages/customer/home.html" class="page-item">首页</a>
+        <a href="pages/customer/dashboard.html" class="page-item">数据看板</a>
         <a href="pages/customer/car_list.html" class="page-item">车辆管理</a>
+        <a href="pages/customer/car_detail.html" class="page-item">车辆详情</a>
+        <a href="pages/customer/car_select.html" class="page-item">选车</a>
         <a href="pages/customer/maintenance_list.html" class="page-item">保养记录</a>
+        <a href="pages/customer/maintenance_detail.html" class="page-item">保养详情</a>
         <a href="pages/customer/repair_list.html" class="page-item">维修记录</a>
+        <a href="pages/customer/repair_detail.html" class="page-item">维修详情</a>
         <a href="pages/customer/order_list.html" class="page-item">订单管理</a>
+        <a href="pages/customer/order_detail.html" class="page-item">订单详情</a>
+        <a href="pages/customer/product_detail.html" class="page-item">商品详情</a>
+        <a href="pages/customer/aftersale_detail.html" class="page-item">售后详情</a>
+        <a href="pages/customer/warranty.html" class="page-item">质保详情</a>
+        <a href="pages/customer/scheme_detail.html" class="page-item">方案详情</a>
+        <a href="pages/customer/quote.html" class="page-item">报价单</a>
         <a href="pages/customer/profile.html" class="page-item">个人中心</a>
+        <a href="pages/customer/message_center.html" class="page-item">消息中心</a>
       </div>
     </a>
-
-    <a href="pages/admin/dashboard.html" class="system-item">
-      <div class="system-icon">⚙️</div>
-      <div class="system-title">平台管理后台</div>
-      <div class="system-desc">管理平台配置、用户权限和系统设置</div>
-      <div class="page-list">
-        <a href="pages/admin/login.html" class="page-item">登录</a>
-        <a href="pages/admin/dashboard.html" class="page-item">首页</a>
-        <a href="pages/admin/user_list.html" class="page-item">用户管理</a>
-        <a href="pages/admin/role_list.html" class="page-item">角色管理</a>
-        <a href="pages/admin/system_config.html" class="page-item">系统配置</a>
-        <a href="pages/admin/log_list.html" class="page-item">日志管理</a>
-      </div>
-    </a>
-
     <a href="pages/promotion/dashboard.html" class="system-item">
       <div class="system-icon">🎯</div>
       <div class="system-title">品牌推广小程序</div>
       <div class="system-desc">管理活动、用户参与和数据分析</div>
       <div class="page-list">
-        <a href="pages/promotion/login.html" class="page-item">登录</a>
         <a href="pages/promotion/dashboard.html" class="page-item">首页</a>
         <a href="pages/promotion/activity_list.html" class="page-item">活动管理</a>
+        <a href="pages/promotion/activity_edit.html" class="page-item">活动编辑</a>
+        <a href="pages/promotion/activity_detail.html" class="page-item">活动详情</a>
         <a href="pages/promotion/activity_stats.html" class="page-item">数据统计</a>
         <a href="pages/promotion/activity_users.html" class="page-item">用户管理</a>
         <a href="pages/promotion/activity_reviews.html" class="page-item">评价管理</a>

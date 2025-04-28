@@ -8,9 +8,17 @@
     body {
       font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
       margin: 0;
-      padding: 0;
+      padding-bottom: 56px;
       background: #f4f7f9;
     }
+    .navbar {height: 50px; background: #409eff; color: #fff; display: flex; align-items: center; justify-content: space-between; padding: 0 18px; font-size: 18px; position: fixed; top: 0; left: 0; right: 0; z-index: 10;}
+    .navbar-title {font-weight: bold; letter-spacing: 1px;}
+    .navbar-actions a {color: #fff; margin-left: 18px; font-size: 20px; text-decoration: none;}
+    .tabbar {position: fixed; left: 0; right: 0; bottom: 0; height: 56px; background: #fff; border-top: 1px solid #e3e8ee; display: flex; z-index: 20;}
+    .tabbar-item {flex: 1; text-align: center; color: #888; text-decoration: none; font-size: 13px; padding-top: 4px; transition: color 0.2s; display: flex; flex-direction: column; align-items: center; justify-content: center;}
+    .tabbar-item span {font-size: 22px; display: block; margin-bottom: 2px;}
+    .tabbar-item.active, .tabbar-item:hover {color: #409eff; font-weight: bold;}
+    .page-content { padding-top: 50px; padding-bottom: 60px; }
     .header {
       background: #fff;
       padding: 15px;
@@ -132,83 +140,100 @@
   </style>
 </head>
 <body>
-  <div class="header">
-    <div class="header-title">活动详情</div>
-    <div class="header-right">
-      <a href="message_center.html">消息</a>
-      <a href="profile.html">我的</a>
+  <!-- 顶部统一导航栏 -->
+  <div class="navbar">
+    <div class="navbar-title">品宣平台</div>
+    <div class="navbar-actions">
+      <a href="message_center.html">🔔</a>
+      <a href="profile.html">👤</a>
     </div>
   </div>
-
-  <div class="activity-banner">
-    春季促销活动
-  </div>
-
-  <div class="activity-info">
-    <div class="info-section">
-      <div class="section-title">基本信息</div>
-      <div class="info-grid">
-        <div class="info-item">
-          <div class="info-label">活动品牌</div>
-          <div class="info-value">宝马</div>
-        </div>
-        <div class="info-item">
-          <div class="info-label">活动类型</div>
-          <div class="info-value">促销活动</div>
-        </div>
-        <div class="info-item">
-          <div class="info-label">活动预算</div>
-          <div class="info-value">¥20,000</div>
-        </div>
-        <div class="info-item">
-          <div class="info-label">活动状态</div>
-          <div class="info-value">进行中</div>
-        </div>
-        <div class="info-item">
-          <div class="info-label">开始时间</div>
-          <div class="info-value">2024-03-01</div>
-        </div>
-        <div class="info-item">
-          <div class="info-label">结束时间</div>
-          <div class="info-value">2024-03-31</div>
-        </div>
+  <div class="page-content" style="padding-top:50px;">
+    <div class="header">
+      <div class="header-title">活动详情</div>
+      <div class="header-right">
+        <a href="message_center.html">消息</a>
+        <a href="profile.html">我的</a>
       </div>
     </div>
 
-    <div class="info-section">
-      <div class="section-title">活动描述</div>
-      <div class="activity-description">
-        春季促销活动是宝马品牌针对春季市场推出的特别优惠活动。活动期间，购买指定车型可享受多重优惠，包括现金优惠、金融贴息、置换补贴等。同时，活动期间还将举办多场线下体验活动，让消费者近距离感受宝马品牌的魅力。
+    <div class="activity-banner">
+      春季促销活动
+    </div>
+
+    <div class="activity-info">
+      <div class="info-section">
+        <div class="section-title">基本信息</div>
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">活动品牌</div>
+            <div class="info-value">宝马</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">活动类型</div>
+            <div class="info-value">促销活动</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">活动预算</div>
+            <div class="info-value">¥20,000</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">活动状态</div>
+            <div class="info-value">进行中</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">开始时间</div>
+            <div class="info-value">2024-03-01</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">结束时间</div>
+            <div class="info-value">2024-03-31</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-section">
+        <div class="section-title">活动描述</div>
+        <div class="activity-description">
+          春季促销活动是宝马品牌针对春季市场推出的特别优惠活动。活动期间，购买指定车型可享受多重优惠，包括现金优惠、金融贴息、置换补贴等。同时，活动期间还将举办多场线下体验活动，让消费者近距离感受宝马品牌的魅力。
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="activity-stats">
-    <div class="section-title">活动数据</div>
-    <div class="stats-grid">
-      <div class="stat-item">
-        <div class="stat-value">500</div>
-        <div class="stat-label">参与人数</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-value">100</div>
-        <div class="stat-label">咨询次数</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-value">50</div>
-        <div class="stat-label">预约试驾</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-value">20</div>
-        <div class="stat-label">成交订单</div>
+    <div class="activity-stats">
+      <div class="section-title">活动数据</div>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-value">500</div>
+          <div class="stat-label">参与人数</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">100</div>
+          <div class="stat-label">咨询次数</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">50</div>
+          <div class="stat-label">预约试驾</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">20</div>
+          <div class="stat-label">成交订单</div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="activity-actions">
-    <a href="#" class="action-btn">编辑活动</a>
-    <a href="#" class="action-btn">分享活动</a>
-    <a href="#" class="action-btn danger">取消活动</a>
+    <div class="activity-actions">
+      <a href="#" class="action-btn">编辑活动</a>
+      <a href="#" class="action-btn">分享活动</a>
+      <a href="#" class="action-btn danger">取消活动</a>
+    </div>
+  </div>
+  <!-- 底部统一TabBar -->
+  <div class="tabbar">
+    <a href="dashboard.html" class="tabbar-item"><span>🏠</span><div>首页</div></a>
+    <a href="activity_list.html" class="tabbar-item active"><span>🎉</span><div>活动</div></a>
+    <a href="activity_stats.html" class="tabbar-item"><span>📊</span><div>数据</div></a>
+    <a href="profile.html" class="tabbar-item"><span>👤</span><div>我的</div></a>
   </div>
 </body>
 </html> 
