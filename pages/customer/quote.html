@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>生成报价单</title>
+  <style>
+    body { font-family: sans-serif; background: #f4f7f9; }
+    .header { background: #fff; padding: 15px; font-size: 18px; font-weight: bold; border-bottom: 1px solid #eee; }
+    .section { background: #fff; border-radius: 8px; margin: 15px; padding: 15px; box-shadow: 0 1px 3px #eee; }
+    .row { display: flex; justify-content: space-between; margin-bottom: 10px; }
+    .label { color: #888; }
+    .value { font-weight: 500; }
+    .total { font-size: 16px; color: #e44d26; font-weight: bold; }
+    .actions { text-align: right; margin-top: 15px; }
+    .actions button { padding: 8px 18px; background: #007bff; color: #fff; border: none; border-radius: 4px; font-size: 15px; }
+  </style>
+</head>
+<body>
+  <div class="header">生成报价单</div>
+  <div class="section">
+    <div class="row"><span class="label">高性能刹车片 x1</span><span class="value">¥ 450.00</span></div>
+    <div class="row"><span class="label">定制轮毂 19寸 x2</span><span class="value">¥ 3600.00</span></div>
+    <div class="row total"><span>总计</span><span>¥ 4050.00</span></div>
+    <div class="actions">
+      <button>保存/分享报价单</button>
+    </div>
+  </div>
+</body>
+</html> 

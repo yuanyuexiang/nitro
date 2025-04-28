@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>品牌推广小程序 - 活动评价管理</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <style>
+    body {
+      font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f7f9;
+    }
+    .header {
+      background: #fff;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 1px 3px #eee;
+    }
+    .header-title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .header-right {
+      display: flex;
+      gap: 15px;
+    }
+    .header-right a {
+      color: #666;
+      text-decoration: none;
+    }
+    .filter-bar {
+      background: #fff;
+      padding: 15px;
+      margin-bottom: 15px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .filter-select {
+      padding: 8px 12px;
+      border: 1px solid #e3e8ee;
+      border-radius: 6px;
+      font-size: 14px;
+      color: #666;
+    }
+    .review-list {
+      padding: 15px;
+    }
+    .review-item {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      box-shadow: 0 1px 3px #eee;
+    }
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .reviewer-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .reviewer-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      background: #f4f7f9;
+    }
+    .reviewer-name {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .review-time {
+      color: #666;
+      font-size: 14px;
+    }
+    .review-rating {
+      display: flex;
+      gap: 5px;
+      margin-bottom: 10px;
+    }
+    .star {
+      color: #ffd700;
+      font-size: 20px;
+    }
+    .review-content {
+      color: #222;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+    .review-images {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .review-image {
+      width: 80px;
+      height: 80px;
+      border-radius: 4px;
+      background: #f4f7f9;
+    }
+    .review-reply {
+      background: #f4f7f9;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    .reply-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+    .reply-author {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .reply-time {
+      color: #666;
+      font-size: 12px;
+    }
+    .reply-content {
+      color: #222;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .review-actions {
+      display: flex;
+      gap: 10px;
+    }
+    .action-btn {
+      padding: 6px 12px;
+      border: 1px solid #e3e8ee;
+      border-radius: 4px;
+      background: #fff;
+      color: #666;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    .action-btn.primary {
+      background: #409eff;
+      color: #fff;
+      border-color: #409eff;
+    }
+    .action-btn.danger {
+      background: #ff4d4f;
+      color: #fff;
+      border-color: #ff4d4f;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-title">活动评价管理</div>
+    <div class="header-right">
+      <a href="message_center.html">消息</a>
+      <a href="profile.html">我的</a>
+    </div>
+  </div>
+
+  <div class="filter-bar">
+    <select class="filter-select">
+      <option value="">选择活动</option>
+      <option value="1">春季促销活动</option>
+      <option value="2">品牌推广周</option>
+    </select>
+    <select class="filter-select">
+      <option value="">评价状态</option>
+      <option value="1">已回复</option>
+      <option value="2">未回复</option>
+    </select>
+    <select class="filter-select">
+      <option value="">评分</option>
+      <option value="5">5星</option>
+      <option value="4">4星</option>
+      <option value="3">3星</option>
+      <option value="2">2星</option>
+      <option value="1">1星</option>
+    </select>
+  </div>
+
+  <div class="review-list">
+    <div class="review-item">
+      <div class="review-header">
+        <div class="reviewer-info">
+          <div class="reviewer-avatar"></div>
+          <div class="reviewer-name">张三</div>
+        </div>
+        <div class="review-time">2024-03-15 14:30</div>
+      </div>
+      <div class="review-rating">
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+      </div>
+      <div class="review-content">
+        活动组织得很好，工作人员服务态度很好，试驾体验很棒，整体感受非常满意。
+      </div>
+      <div class="review-images">
+        <div class="review-image"></div>
+        <div class="review-image"></div>
+      </div>
+      <div class="review-reply">
+        <div class="reply-header">
+          <div class="reply-author">活动管理员</div>
+          <div class="reply-time">2024-03-15 15:00</div>
+        </div>
+        <div class="reply-content">
+          感谢您的参与和好评，我们会继续努力提供更好的服务！
+        </div>
+      </div>
+      <div class="review-actions">
+        <a href="#" class="action-btn">编辑回复</a>
+        <a href="#" class="action-btn danger">删除评价</a>
+      </div>
+    </div>
+
+    <div class="review-item">
+      <div class="review-header">
+        <div class="reviewer-info">
+          <div class="reviewer-avatar"></div>
+          <div class="reviewer-name">李四</div>
+        </div>
+        <div class="review-time">2024-03-14 16:45</div>
+      </div>
+      <div class="review-rating">
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">☆</span>
+      </div>
+      <div class="review-content">
+        活动整体不错，但是试驾时间安排有点紧张，希望能有更多时间体验。
+      </div>
+      <div class="review-actions">
+        <a href="#" class="action-btn primary">回复评价</a>
+        <a href="#" class="action-btn danger">删除评价</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>品牌推广小程序 - 活动详情</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <style>
+    body {
+      font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f7f9;
+    }
+    .header {
+      background: #fff;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 1px 3px #eee;
+    }
+    .header-title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .header-right {
+      display: flex;
+      gap: 15px;
+    }
+    .header-right a {
+      color: #666;
+      text-decoration: none;
+    }
+    .activity-banner {
+      width: 100%;
+      height: 200px;
+      background: #409eff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .activity-info {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 15px;
+    }
+    .info-section {
+      margin-bottom: 20px;
+    }
+    .section-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #222;
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+    .info-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .info-label {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+    .info-value {
+      color: #222;
+      font-size: 14px;
+    }
+    .activity-description {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .activity-stats {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 15px;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-value {
+      font-size: 24px;
+      font-weight: bold;
+      color: #409eff;
+      margin-bottom: 5px;
+    }
+    .stat-label {
+      color: #666;
+      font-size: 14px;
+    }
+    .activity-actions {
+      background: #fff;
+      padding: 20px;
+      display: flex;
+      gap: 15px;
+    }
+    .action-btn {
+      flex: 1;
+      padding: 12px;
+      border: 1px solid #e3e8ee;
+      border-radius: 6px;
+      background: #fff;
+      color: #666;
+      font-size: 14px;
+      text-align: center;
+      text-decoration: none;
+    }
+    .action-btn.primary {
+      background: #409eff;
+      color: #fff;
+      border-color: #409eff;
+    }
+    .action-btn.danger {
+      background: #ff4d4f;
+      color: #fff;
+      border-color: #ff4d4f;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-title">活动详情</div>
+    <div class="header-right">
+      <a href="message_center.html">消息</a>
+      <a href="profile.html">我的</a>
+    </div>
+  </div>
+
+  <div class="activity-banner">
+    春季促销活动
+  </div>
+
+  <div class="activity-info">
+    <div class="info-section">
+      <div class="section-title">基本信息</div>
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="info-label">活动品牌</div>
+          <div class="info-value">宝马</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">活动类型</div>
+          <div class="info-value">促销活动</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">活动预算</div>
+          <div class="info-value">¥20,000</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">活动状态</div>
+          <div class="info-value">进行中</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">开始时间</div>
+          <div class="info-value">2024-03-01</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">结束时间</div>
+          <div class="info-value">2024-03-31</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <div class="section-title">活动描述</div>
+      <div class="activity-description">
+        春季促销活动是宝马品牌针对春季市场推出的特别优惠活动。活动期间，购买指定车型可享受多重优惠，包括现金优惠、金融贴息、置换补贴等。同时，活动期间还将举办多场线下体验活动，让消费者近距离感受宝马品牌的魅力。
+      </div>
+    </div>
+  </div>
+
+  <div class="activity-stats">
+    <div class="section-title">活动数据</div>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-value">500</div>
+        <div class="stat-label">参与人数</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">100</div>
+        <div class="stat-label">咨询次数</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">50</div>
+        <div class="stat-label">预约试驾</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">20</div>
+        <div class="stat-label">成交订单</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="activity-actions">
+    <a href="#" class="action-btn">编辑活动</a>
+    <a href="#" class="action-btn">分享活动</a>
+    <a href="#" class="action-btn danger">取消活动</a>
+  </div>
+</body>
+</html> 

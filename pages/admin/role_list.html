@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>平台管理后台 - 角色管理</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f4f7f9;
+      font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
+    }
+    .admin-layout {
+      display: flex;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: 220px;
+      background: #223046;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      padding-top: 0;
+    }
+    .sidebar-logo {
+      font-size: 22px;
+      font-weight: bold;
+      padding: 28px 0 18px 0;
+      text-align: center;
+      background: #1a2536;
+      letter-spacing: 2px;
+    }
+    .menu {
+      flex: 1;
+      padding: 0 0 20px 0;
+    }
+    .menu-group {
+      margin-top: 18px;
+    }
+    .menu-item {
+      display: flex;
+      align-items: center;
+      padding: 10px 30px;
+      color: #cfd8e3;
+      font-size: 15px;
+      text-decoration: none;
+      border-left: 4px solid transparent;
+      transition: background 0.2s, color 0.2s;
+      cursor: pointer;
+    }
+    .menu-item.active, .menu-item:hover {
+      background: #182233;
+      color: #fff;
+      border-left: 4px solid #409eff;
+    }
+    .menu-item i {
+      margin-right: 10px;
+      font-size: 17px;
+    }
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+    .topbar {
+      height: 56px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      box-shadow: 0 1px 3px #e5e9f2;
+    }
+    .topbar-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #223046;
+    }
+    .topbar-user {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .topbar-user span {
+      color: #223046;
+      font-size: 15px;
+    }
+    .main-content {
+      flex: 1;
+      padding: 32px 32px 0 32px;
+      background: #f4f7f9;
+    }
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px #e5e9f2;
+      padding: 24px 24px 16px 24px;
+      margin-bottom: 24px;
+    }
+    .toolbar {
+      background: #fff;
+      padding: 15px 20px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px #eee;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .search-box {
+      display: flex;
+      gap: 10px;
+    }
+    .search-input {
+      width: 200px;
+      padding: 8px 12px;
+      border: 1px solid #e3e8ee;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .filter-select {
+      padding: 8px 12px;
+      border: 1px solid #e3e8ee;
+      border-radius: 6px;
+      font-size: 14px;
+      color: #666;
+    }
+    .add-btn {
+      padding: 8px 16px;
+      background: #409eff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .add-btn:hover {
+      background: #66b1ff;
+    }
+    .table-container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px #eee;
+    }
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .table th {
+      text-align: left;
+      padding: 12px;
+      border-bottom: 1px solid #eee;
+      color: #666;
+      font-weight: normal;
+    }
+    .table td {
+      padding: 12px;
+      border-bottom: 1px solid #eee;
+    }
+    .table tr:last-child td {
+      border-bottom: none;
+    }
+    .status {
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+    .status.active {
+      background: #f6ffed;
+      color: #52c41a;
+    }
+    .status.inactive {
+      background: #fff1f0;
+      color: #ff4d4f;
+    }
+    .action-btn {
+      padding: 6px 12px;
+      border: 1px solid #e3e8ee;
+      border-radius: 4px;
+      background: #fff;
+      color: #666;
+      font-size: 14px;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+    .action-btn:hover {
+      border-color: #409eff;
+      color: #409eff;
+    }
+    .pagination {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 20px;
+      gap: 10px;
+    }
+    .page-btn {
+      padding: 6px 12px;
+      border: 1px solid #e3e8ee;
+      border-radius: 4px;
+      background: #fff;
+      color: #666;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    .page-btn.active {
+      background: #409eff;
+      color: #fff;
+      border-color: #409eff;
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-layout">
+    <div class="sidebar">
+      <div class="sidebar-logo">[平台Logo]</div>
+      <div class="menu">
+        <div class="menu-group">
+          <a class="menu-item" href="dashboard.html"><i>🏠</i> 概览</a>
+          <a class="menu-item" href="user_list.html"><i>👤</i> 用户管理</a>
+          <a class="menu-item active" href="role_list.html"><i>🔑</i> 角色管理</a>
+          <a class="menu-item" href="supplier_review.html"><i>🏢</i> 供应商审核</a>
+          <a class="menu-item" href="store_list.html"><i>🏪</i> 门店管理</a>
+          <a class="menu-item" href="#"><i>🛠️</i> 服务商管理</a>
+          <a class="menu-item" href="#"><i>🚗</i> 车主管理</a>
+        </div>
+        <div class="menu-group">
+          <a class="menu-item" href="product_list.html"><i>📦</i> 商品管理</a>
+          <a class="menu-item" href="order_list.html"><i>🧾</i> 订单管理</a>
+          <a class="menu-item" href="#"><i>💰</i> 财务管理</a>
+          <a class="menu-item" href="#"><i>📢</i> 营销管理</a>
+          <a class="menu-item" href="system_config.html"><i>⚙️</i> 系统配置</a>
+          <a class="menu-item" href="log_list.html"><i>📝</i> 日志管理</a>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="topbar">
+        <div class="topbar-title">角色管理</div>
+        <div class="topbar-user">
+          <span>消息</span>
+          <span>个人中心</span>
+          <span>退出</span>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="card">
+          <div class="toolbar">
+            <div class="search-box">
+              <input type="text" class="search-input" placeholder="搜索角色名称">
+              <select class="filter-select">
+                <option value="">角色类型</option>
+                <option value="1">系统角色</option>
+                <option value="2">自定义角色</option>
+              </select>
+              <select class="filter-select">
+                <option value="">状态</option>
+                <option value="1">启用</option>
+                <option value="2">禁用</option>
+              </select>
+            </div>
+            <button class="add-btn">添加角色</button>
+          </div>
+          <div class="table-container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>角色名称</th>
+                  <th>角色类型</th>
+                  <th>描述</th>
+                  <th>创建时间</th>
+                  <th>状态</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>超级管理员</td>
+                  <td>系统角色</td>
+                  <td>系统最高权限角色</td>
+                  <td>2024-03-01</td>
+                  <td><span class="status active">启用</span></td>
+                  <td>
+                    <a href="#" class="action-btn">编辑</a>
+                    <a href="#" class="action-btn">权限设置</a>
+                    <a href="#" class="action-btn">删除</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>供应商管理员</td>
+                  <td>系统角色</td>
+                  <td>供应商管理相关权限</td>
+                  <td>2024-03-05</td>
+                  <td><span class="status active">启用</span></td>
+                  <td>
+                    <a href="#" class="action-btn">编辑</a>
+                    <a href="#" class="action-btn">权限设置</a>
+                    <a href="#" class="action-btn">删除</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>门店管理员</td>
+                  <td>系统角色</td>
+                  <td>门店管理相关权限</td>
+                  <td>2024-03-10</td>
+                  <td><span class="status inactive">禁用</span></td>
+                  <td>
+                    <a href="#" class="action-btn">编辑</a>
+                    <a href="#" class="action-btn">权限设置</a>
+                    <a href="#" class="action-btn">删除</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="pagination">
+              <a href="#" class="page-btn">上一页</a>
+              <a href="#" class="page-btn active">1</a>
+              <a href="#" class="page-btn">2</a>
+              <a href="#" class="page-btn">3</a>
+              <a href="#" class="page-btn">下一页</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 

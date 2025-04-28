@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>汽车服务平台 - 导航页</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <style>
+    body {
+      font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f7f9;
+    }
+    .header {
+      background: #fff;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 1px 3px #eee;
+    }
+    .header-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #222;
+      margin-bottom: 10px;
+    }
+    .header-desc {
+      color: #666;
+      font-size: 14px;
+    }
+    .system-list {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .system-item {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px #eee;
+      text-decoration: none;
+      color: #222;
+    }
+    .system-icon {
+      width: 60px;
+      height: 60px;
+      background: #f4f7f9;
+      border-radius: 30px;
+      margin: 0 auto 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+    .system-title {
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .system-desc {
+      color: #666;
+      font-size: 14px;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .page-list {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #eee;
+    }
+    .page-item {
+      display: block;
+      padding: 8px 0;
+      color: #409eff;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    .page-item:hover {
+      color: #66b1ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-title">汽车服务平台</div>
+    <div class="header-desc">一站式汽车服务解决方案</div>
+  </div>
+
+  <div class="system-list">
+    <a href="pages/supplier/dashboard.html" class="system-item">
+      <div class="system-icon">🏭</div>
+      <div class="system-title">供应商小程序</div>
+      <div class="system-desc">管理供应商信息、产品、订单和结算</div>
+      <div class="page-list">
+        <a href="pages/supplier/login.html" class="page-item">登录</a>
+        <a href="pages/supplier/dashboard.html" class="page-item">首页</a>
+        <a href="pages/supplier/product_list.html" class="page-item">产品管理</a>
+        <a href="pages/supplier/order_list.html" class="page-item">订单管理</a>
+        <a href="pages/supplier/settlement_list.html" class="page-item">结算管理</a>
+        <a href="pages/supplier/profile.html" class="page-item">个人中心</a>
+      </div>
+    </a>
+
+    <a href="pages/store/dashboard.html" class="system-item">
+      <div class="system-icon">🏪</div>
+      <div class="system-title">门店小程序</div>
+      <div class="system-desc">管理门店信息、服务、预约和评价</div>
+      <div class="page-list">
+        <a href="pages/store/login.html" class="page-item">登录</a>
+        <a href="pages/store/dashboard.html" class="page-item">首页</a>
+        <a href="pages/store/service_list.html" class="page-item">服务管理</a>
+        <a href="pages/store/appointment_list.html" class="page-item">预约管理</a>
+        <a href="pages/store/review_list.html" class="page-item">评价管理</a>
+        <a href="pages/store/profile.html" class="page-item">个人中心</a>
+      </div>
+    </a>
+
+    <a href="pages/customer/home.html" class="system-item">
+      <div class="system-icon">🚗</div>
+      <div class="system-title">车主小程序</div>
+      <div class="system-desc">查看促销活动、预约服务、管理订单</div>
+      <div class="page-list">
+        <a href="pages/customer/login.html" class="page-item">登录</a>
+        <a href="pages/customer/home.html" class="page-item">首页</a>
+        <a href="pages/customer/car_list.html" class="page-item">车辆管理</a>
+        <a href="pages/customer/maintenance_list.html" class="page-item">保养记录</a>
+        <a href="pages/customer/repair_list.html" class="page-item">维修记录</a>
+        <a href="pages/customer/order_list.html" class="page-item">订单管理</a>
+        <a href="pages/customer/profile.html" class="page-item">个人中心</a>
+      </div>
+    </a>
+
+    <a href="pages/admin/dashboard.html" class="system-item">
+      <div class="system-icon">⚙️</div>
+      <div class="system-title">平台管理后台</div>
+      <div class="system-desc">管理平台配置、用户权限和系统设置</div>
+      <div class="page-list">
+        <a href="pages/admin/login.html" class="page-item">登录</a>
+        <a href="pages/admin/dashboard.html" class="page-item">首页</a>
+        <a href="pages/admin/user_list.html" class="page-item">用户管理</a>
+        <a href="pages/admin/role_list.html" class="page-item">角色管理</a>
+        <a href="pages/admin/system_config.html" class="page-item">系统配置</a>
+        <a href="pages/admin/log_list.html" class="page-item">日志管理</a>
+      </div>
+    </a>
+
+    <a href="pages/promotion/dashboard.html" class="system-item">
+      <div class="system-icon">🎯</div>
+      <div class="system-title">品牌推广小程序</div>
+      <div class="system-desc">管理活动、用户参与和数据分析</div>
+      <div class="page-list">
+        <a href="pages/promotion/login.html" class="page-item">登录</a>
+        <a href="pages/promotion/dashboard.html" class="page-item">首页</a>
+        <a href="pages/promotion/activity_list.html" class="page-item">活动管理</a>
+        <a href="pages/promotion/activity_stats.html" class="page-item">数据统计</a>
+        <a href="pages/promotion/activity_users.html" class="page-item">用户管理</a>
+        <a href="pages/promotion/activity_reviews.html" class="page-item">评价管理</a>
+      </div>
+    </a>
+  </div>
+</body>
+</html> 

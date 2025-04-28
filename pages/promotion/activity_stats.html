@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>品牌推广小程序 - 活动数据统计</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <style>
+    body {
+      font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f7f9;
+    }
+    .header {
+      background: #fff;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 1px 3px #eee;
+    }
+    .header-title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .header-right {
+      display: flex;
+      gap: 15px;
+    }
+    .header-right a {
+      color: #666;
+      text-decoration: none;
+    }
+    .filter-bar {
+      background: #fff;
+      padding: 15px;
+      margin-bottom: 15px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .filter-select {
+      padding: 8px 12px;
+      border: 1px solid #e3e8ee;
+      border-radius: 6px;
+      font-size: 14px;
+      color: #666;
+    }
+    .date-range {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .date-input {
+      padding: 8px 12px;
+      border: 1px solid #e3e8ee;
+      border-radius: 6px;
+      font-size: 14px;
+      color: #666;
+    }
+    .stats-overview {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      padding: 15px;
+    }
+    .stat-card {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 1px 3px #eee;
+    }
+    .stat-value {
+      font-size: 24px;
+      font-weight: bold;
+      color: #409eff;
+      margin-bottom: 5px;
+    }
+    .stat-label {
+      color: #666;
+      font-size: 14px;
+    }
+    .chart-container {
+      background: #fff;
+      margin: 15px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px #eee;
+    }
+    .chart-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .chart {
+      width: 100%;
+      height: 300px;
+      background: #f4f7f9;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+    }
+    .trend-list {
+      background: #fff;
+      margin: 15px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px #eee;
+    }
+    .trend-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .trend-item:last-child {
+      border-bottom: none;
+    }
+    .trend-label {
+      color: #666;
+      font-size: 14px;
+    }
+    .trend-value {
+      color: #222;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .trend-change {
+      color: #52c41a;
+      font-size: 14px;
+    }
+    .trend-change.negative {
+      color: #ff4d4f;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-title">活动数据统计</div>
+    <div class="header-right">
+      <a href="message_center.html">消息</a>
+      <a href="profile.html">我的</a>
+    </div>
+  </div>
+
+  <div class="filter-bar">
+    <select class="filter-select">
+      <option value="">选择活动</option>
+      <option value="1">春季促销活动</option>
+      <option value="2">品牌推广周</option>
+    </select>
+    <div class="date-range">
+      <input type="date" class="date-input">
+      <span>至</span>
+      <input type="date" class="date-input">
+    </div>
+  </div>
+
+  <div class="stats-overview">
+    <div class="stat-card">
+      <div class="stat-value">500</div>
+      <div class="stat-label">总参与人数</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">100</div>
+      <div class="stat-label">咨询次数</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">50</div>
+      <div class="stat-label">预约试驾</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">20</div>
+      <div class="stat-label">成交订单</div>
+    </div>
+  </div>
+
+  <div class="chart-container">
+    <div class="chart-title">参与人数趋势</div>
+    <div class="chart">图表区域</div>
+  </div>
+
+  <div class="chart-container">
+    <div class="chart-title">转化率分析</div>
+    <div class="chart">图表区域</div>
+  </div>
+
+  <div class="trend-list">
+    <div class="trend-item">
+      <div class="trend-label">参与人数环比</div>
+      <div class="trend-value">+15%</div>
+      <div class="trend-change">↑</div>
+    </div>
+    <div class="trend-item">
+      <div class="trend-label">咨询转化率</div>
+      <div class="trend-value">25%</div>
+      <div class="trend-change">↑</div>
+    </div>
+    <div class="trend-item">
+      <div class="trend-label">试驾转化率</div>
+      <div class="trend-value">10%</div>
+      <div class="trend-change negative">↓</div>
+    </div>
+    <div class="trend-item">
+      <div class="trend-label">成交转化率</div>
+      <div class="trend-value">5%</div>
+      <div class="trend-change">↑</div>
+    </div>
+  </div>
+</body>
+</html> 

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>我的订单</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="../common/common.css">
+  <style>
+    body { font-family: sans-serif; background: #f4f7f9; }
+    .header { background: #fff; padding: 15px; font-size: 18px; font-weight: bold; border-bottom: 1px solid #eee; }
+    .order-list { padding: 10px 15px; }
+    .order-card { background: #fff; border-radius: 8px; margin-bottom: 12px; box-shadow: 0 1px 3px #eee; }
+    .order-header { padding: 10px 15px; border-bottom: 1px solid #f4f7f9; display: flex; justify-content: space-between; }
+    .order-id { color: #888; font-size: 13px; }
+    .order-status { font-size: 13px; color: #007bff; }
+    .order-body { padding: 15px; }
+    .product-title { font-size: 15px; font-weight: 500; }
+    .order-footer { padding: 10px 15px; border-top: 1px solid #f4f7f9; text-align: right; }
+    .order-footer button { padding: 6px 18px; background: #007bff; color: #fff; border: none; border-radius: 4px; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <div class="nav-bar">我的订单</div>
+    <div class="page-content">
+      <div class="order-list">
+        <div class="order-card">
+          <div class="order-header">
+            <span class="order-id">订单号: 20240315001</span>
+            <span class="order-status">待收货</span>
+          </div>
+          <div class="order-body">
+            <div class="product-title">高性能刹车片 x1</div>
+            <div>总价：¥ 450.00</div>
+          </div>
+          <div class="order-footer">
+            <a href="order_detail.html" class="order-btn">查看详情</a>
+          </div>
+        </div>
+        <div class="order-card">
+          <div class="order-header">
+            <span class="order-id">订单号: 20240314005</span>
+            <span class="order-status" style="color:#28a745;">已完成</span>
+          </div>
+          <div class="order-body">
+            <div class="product-title">定制轮毂 19寸 x2</div>
+            <div>总价：¥ 3600.00</div>
+          </div>
+          <div class="order-footer">
+            <a href="order_detail.html" class="order-btn">查看详情</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-bar">
+      <a href="home.html">首页</a>
+      <a href="car_select.html">选车</a>
+      <a href="profile.html" class="active">我的</a>
+    </div>
+  </div>
+  <style>
+    .order-list { padding: 0; }
+    .order-card { background: #fff; border-radius: 8px; margin-bottom: 12px; box-shadow: 0 1px 3px #eee; }
+    .order-header { padding: 10px 15px; border-bottom: 1px solid #f4f7f9; display: flex; justify-content: space-between; }
+    .order-id { color: #888; font-size: 13px; }
+    .order-status { font-size: 13px; color: #007bff; }
+    .order-body { padding: 15px; }
+    .product-title { font-size: 15px; font-weight: 500; }
+    .order-footer { padding: 10px 15px; border-top: 1px solid #f4f7f9; text-align: right; }
+    .order-btn { display: inline-block; padding: 6px 18px; background: #007bff; color: #fff; border-radius: 4px; font-size: 14px; text-decoration: none; }
+  </style>
+</body>
+</html> 

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>平台管理后台 - 供应商审核</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f4f7f9;
+      font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
+    }
+    .admin-layout {
+      display: flex;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: 220px;
+      background: #223046;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      padding-top: 0;
+    }
+    .sidebar-logo {
+      font-size: 22px;
+      font-weight: bold;
+      padding: 28px 0 18px 0;
+      text-align: center;
+      background: #1a2536;
+      letter-spacing: 2px;
+    }
+    .menu {
+      flex: 1;
+      padding: 0 0 20px 0;
+    }
+    .menu-group {
+      margin-top: 18px;
+    }
+    .menu-title {
+      font-size: 13px;
+      color: #8fa1b2;
+      padding: 8px 30px 4px 30px;
+      letter-spacing: 1px;
+    }
+    .menu-item {
+      display: flex;
+      align-items: center;
+      padding: 10px 30px;
+      color: #cfd8e3;
+      font-size: 15px;
+      text-decoration: none;
+      border-left: 4px solid transparent;
+      transition: background 0.2s, color 0.2s;
+      cursor: pointer;
+    }
+    .menu-item.active, .menu-item:hover {
+      background: #182233;
+      color: #fff;
+      border-left: 4px solid #409eff;
+    }
+    .menu-item i {
+      margin-right: 10px;
+      font-size: 17px;
+    }
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+    .topbar {
+      height: 56px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      box-shadow: 0 1px 3px #e5e9f2;
+    }
+    .topbar-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #223046;
+    }
+    .topbar-user {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .topbar-user span {
+      color: #223046;
+      font-size: 15px;
+    }
+    .main-content {
+      flex: 1;
+      padding: 32px 32px 0 32px;
+      background: #f4f7f9;
+    }
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px #e5e9f2;
+      padding: 24px 24px 16px 24px;
+      margin-bottom: 24px;
+    }
+    .search-bar {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+    .search-bar label {
+      font-size: 14px;
+      color: #223046;
+      margin-right: 6px;
+    }
+    .search-bar input, .search-bar select {
+      padding: 6px 10px;
+      border: 1px solid #dbe3ec;
+      border-radius: 4px;
+      font-size: 14px;
+      background: #f8fafc;
+      outline: none;
+    }
+    .search-bar input[type="date"] {
+      min-width: 120px;
+    }
+    .search-bar button {
+      padding: 7px 22px;
+      border: none;
+      border-radius: 4px;
+      font-size: 15px;
+      cursor: pointer;
+      margin-left: 4px;
+    }
+    .btn-primary {
+      background: #409eff;
+      color: #fff;
+    }
+    .btn-gray {
+      background: #6c7685;
+      color: #fff;
+    }
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      background: #fff;
+    }
+    .table th, .table td {
+      padding: 12px 10px;
+      text-align: left;
+      font-size: 15px;
+      border-bottom: 1px solid #f0f2f7;
+    }
+    .table th {
+      color: #223046;
+      background: #f7fafd;
+      font-weight: 600;
+    }
+    .table tr:last-child td {
+      border-bottom: none;
+    }
+    .status {
+      display: inline-block;
+      padding: 3px 14px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .status.pending {
+      background: #fff7e6;
+      color: #e6a23c;
+    }
+    .status.approved {
+      background: #e6f7e6;
+      color: #67c23a;
+    }
+    .status.rejected {
+      background: #fde2e2;
+      color: #f56c6c;
+    }
+    .action-link {
+      color: #409eff;
+      text-decoration: none;
+      margin-right: 10px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .action-link.disabled {
+      color: #bfcbd9;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    .pagination {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-top: 18px;
+      gap: 4px;
+    }
+    .pagination button, .pagination span {
+      border: none;
+      background: none;
+      font-size: 15px;
+      color: #223046;
+      padding: 4px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .pagination button.active, .pagination span.active {
+      background: #409eff;
+      color: #fff;
+    }
+    .pagination button:disabled {
+      color: #bfcbd9;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-layout">
+    <div class="sidebar">
+      <div class="sidebar-logo">[平台Logo]</div>
+      <div class="menu">
+        <div class="menu-group">
+          <a class="menu-item" href="#"><i>🏠</i> 概览</a>
+          <a class="menu-item" href="#"><i>👤</i> 用户管理</a>
+          <a class="menu-item active" href="#"><i>🏢</i> 供应商审核</a>
+          <a class="menu-item" href="#"><i>🏪</i> 门店管理</a>
+          <a class="menu-item" href="#"><i>🛠️</i> 服务商管理</a>
+          <a class="menu-item" href="#"><i>🚗</i> 车主管理</a>
+        </div>
+        <div class="menu-group">
+          <a class="menu-item" href="#"><i>📦</i> 商品管理</a>
+          <a class="menu-item" href="#"><i>🧾</i> 订单管理</a>
+          <a class="menu-item" href="#"><i>💰</i> 财务管理</a>
+          <a class="menu-item" href="#"><i>📢</i> 营销管理</a>
+          <a class="menu-item" href="#"><i>⚙️</i> 系统设置</a>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="topbar">
+        <div class="topbar-title">供应商审核</div>
+        <div class="topbar-user">
+          <span>消息</span>
+          <span>个人中心</span>
+          <span>退出</span>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="card">
+          <form class="search-bar">
+            <label>公司名称</label>
+            <input type="text" placeholder="输入公司名称关键词">
+            <label>审核状态</label>
+            <select>
+              <option>全部状态</option>
+              <option>待审核</option>
+              <option>已通过</option>
+              <option>已驳回</option>
+            </select>
+            <label>申请日期</label>
+            <input type="date" value="2025-04-07">
+            <button type="submit" class="btn-primary">查询</button>
+            <button type="reset" class="btn-gray">重置</button>
+          </form>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>公司名称</th>
+                <th>联系人</th>
+                <th>联系电话</th>
+                <th>申请时间</th>
+                <th>状态</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>远大创新科技有限公司</td>
+                <td>张伟</td>
+                <td>13812345678</td>
+                <td>2024-03-10 14:30:15</td>
+                <td><span class="status pending">待审核</span></td>
+                <td>
+                  <a class="action-link" href="#">查看详情</a>
+                  <a class="action-link" href="#">通过</a>
+                  <a class="action-link" style="color:#f56c6c;" href="#">驳回</a>
+                </td>
+              </tr>
+              <tr>
+                <td>迅捷汽配贸易有限公司</td>
+                <td>李娜</td>
+                <td>13987654321</td>
+                <td>2024-03-09 09:15:00</td>
+                <td><span class="status approved">已通过</span></td>
+                <td>
+                  <a class="action-link" href="#">查看详情</a>
+                  <span class="action-link disabled">通过</span>
+                  <span class="action-link disabled">驳回</span>
+                </td>
+              </tr>
+              <tr>
+                <td>飞驰动力改装中心</td>
+                <td>王强</td>
+                <td>13711223344</td>
+                <td>2024-03-08 17:05:40</td>
+                <td><span class="status rejected">已驳回</span></td>
+                <td>
+                  <a class="action-link" href="#">查看详情</a>
+                  <span class="action-link disabled">通过</span>
+                  <span class="action-link disabled">驳回</span>
+                </td>
+              </tr>
+              <tr>
+                <td>宏图供应连锁</td>
+                <td>赵静</td>
+                <td>13699887766</td>
+                <td>2024-03-11 10:00:00</td>
+                <td><span class="status pending">待审核</span></td>
+                <td>
+                  <a class="action-link" href="#">查看详情</a>
+                  <a class="action-link" href="#">通过</a>
+                  <a class="action-link" style="color:#f56c6c;" href="#">驳回</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="pagination">
+            <button disabled>« 上一页</button>
+            <button class="active">1</button>
+            <button>2</button>
+            <span>3</span>
+            <span>...</span>
+            <button>8</button>
+            <button>下一页 »</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 

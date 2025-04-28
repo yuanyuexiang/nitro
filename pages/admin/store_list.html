@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>平台管理后台 - 门店管理</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f4f7f9;
+      font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
+    }
+    .admin-layout {
+      display: flex;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: 220px;
+      background: #223046;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      padding-top: 0;
+    }
+    .sidebar-logo {
+      font-size: 22px;
+      font-weight: bold;
+      padding: 28px 0 18px 0;
+      text-align: center;
+      background: #1a2536;
+      letter-spacing: 2px;
+    }
+    .menu {
+      flex: 1;
+      padding: 0 0 20px 0;
+    }
+    .menu-group {
+      margin-top: 18px;
+    }
+    .menu-item {
+      display: flex;
+      align-items: center;
+      padding: 10px 30px;
+      color: #cfd8e3;
+      font-size: 15px;
+      text-decoration: none;
+      border-left: 4px solid transparent;
+      transition: background 0.2s, color 0.2s;
+      cursor: pointer;
+    }
+    .menu-item.active, .menu-item:hover {
+      background: #182233;
+      color: #fff;
+      border-left: 4px solid #409eff;
+    }
+    .menu-item i {
+      margin-right: 10px;
+      font-size: 17px;
+    }
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+    .topbar {
+      height: 56px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      box-shadow: 0 1px 3px #e5e9f2;
+    }
+    .topbar-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #223046;
+    }
+    .topbar-user {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .topbar-user span {
+      color: #223046;
+      font-size: 15px;
+    }
+    .main-content {
+      flex: 1;
+      padding: 32px 32px 0 32px;
+      background: #f4f7f9;
+    }
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px #e5e9f2;
+      padding: 24px 24px 16px 24px;
+      margin-bottom: 24px;
+    }
+    .search-bar {
+      padding: 0 0 15px 0;
+      background: none;
+      margin-bottom: 0;
+    }
+    .search-input {
+      width: 300px;
+      padding: 8px 12px;
+      border: 1px solid #e3e8ee;
+      border-radius: 6px;
+      font-size: 15px;
+      box-sizing: border-box;
+    }
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      padding: 0 0 15px 0;
+      background: none;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .filter-btn {
+      padding: 8px 15px;
+      border: 1px solid #e3e8ee;
+      border-radius: 6px;
+      background: #fff;
+      color: #666;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .filter-btn.active {
+      background: #409eff;
+      color: #fff;
+      border-color: #409eff;
+    }
+    .store-list {
+      padding: 0;
+    }
+    .store-item {
+      background: #fff;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 1px 3px #eee;
+    }
+    .store-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+    }
+    .store-name {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .store-status {
+      color: #409eff;
+      font-size: 14px;
+    }
+    .store-info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .info-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .info-label {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+    .info-value {
+      color: #222;
+      font-size: 14px;
+    }
+    .store-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid #eee;
+    }
+    .store-stats {
+      display: flex;
+      gap: 20px;
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-value {
+      font-size: 16px;
+      font-weight: bold;
+      color: #222;
+      margin-bottom: 5px;
+    }
+    .stat-label {
+      color: #666;
+      font-size: 12px;
+    }
+    .store-actions {
+      display: flex;
+      gap: 10px;
+    }
+    .action-btn {
+      padding: 6px 12px;
+      border: 1px solid #e3e8ee;
+      border-radius: 4px;
+      background: #fff;
+      color: #666;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    .action-btn.primary {
+      background: #409eff;
+      color: #fff;
+      border-color: #409eff;
+    }
+    .action-btn.danger {
+      background: #ff4d4f;
+      color: #fff;
+      border-color: #ff4d4f;
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-layout">
+    <div class="sidebar">
+      <div class="sidebar-logo">[平台Logo]</div>
+      <div class="menu">
+        <div class="menu-group">
+          <a class="menu-item" href="dashboard.html"><i>🏠</i> 概览</a>
+          <a class="menu-item" href="user_list.html"><i>👤</i> 用户管理</a>
+          <a class="menu-item" href="role_list.html"><i>🔑</i> 角色管理</a>
+          <a class="menu-item" href="supplier_review.html"><i>🏢</i> 供应商审核</a>
+          <a class="menu-item active" href="store_list.html"><i>🏪</i> 门店管理</a>
+          <a class="menu-item" href="#"><i>🛠️</i> 服务商管理</a>
+          <a class="menu-item" href="#"><i>🚗</i> 车主管理</a>
+        </div>
+        <div class="menu-group">
+          <a class="menu-item" href="product_list.html"><i>📦</i> 商品管理</a>
+          <a class="menu-item" href="order_list.html"><i>🧾</i> 订单管理</a>
+          <a class="menu-item" href="#"><i>💰</i> 财务管理</a>
+          <a class="menu-item" href="#"><i>📢</i> 营销管理</a>
+          <a class="menu-item" href="system_config.html"><i>⚙️</i> 系统配置</a>
+          <a class="menu-item" href="log_list.html"><i>📝</i> 日志管理</a>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="topbar">
+        <div class="topbar-title">门店管理</div>
+        <div class="topbar-user">
+          <span>消息</span>
+          <span>个人中心</span>
+          <span>退出</span>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="card">
+          <div class="search-bar">
+            <input type="text" class="search-input" placeholder="搜索门店名称、地址">
+          </div>
+          <div class="filter-bar">
+            <button class="filter-btn active">全部</button>
+            <button class="filter-btn">营业中</button>
+            <button class="filter-btn">已关闭</button>
+            <button class="filter-btn">待审核</button>
+          </div>
+          <div class="store-list">
+            <div class="store-item">
+              <div class="store-header">
+                <div class="store-name">某某汽车维修中心</div>
+                <div class="store-status">营业中</div>
+              </div>
+              <div class="store-info">
+                <div class="info-item">
+                  <div class="info-label">门店地址</div>
+                  <div class="info-value">广东省广州市天河区某某路123号</div>
+                </div>
+                <div class="info-item">
+                  <div class="info-label">联系电话</div>
+                  <div class="info-value">020-12345678</div>
+                </div>
+                <div class="info-item">
+                  <div class="info-label">营业时间</div>
+                  <div class="info-value">09:00-21:00</div>
+                </div>
+                <div class="info-item">
+                  <div class="info-label">门店类型</div>
+                  <div class="info-value">维修保养</div>
+                </div>
+              </div>
+              <div class="store-footer">
+                <div class="store-stats">
+                  <div class="stat-item">
+                    <div class="stat-value">128</div>
+                    <div class="stat-label">今日订单</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-value">¥12,800</div>
+                    <div class="stat-label">今日销售额</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-value">4.8</div>
+                    <div class="stat-label">评分</div>
+                  </div>
+                </div>
+                <div class="store-actions">
+                  <a href="#" class="action-btn">查看详情</a>
+                  <a href="#" class="action-btn danger">关闭门店</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="store-item">
+              <div class="store-header">
+                <div class="store-name">某某汽车美容中心</div>
+                <div class="store-status">待审核</div>
+              </div>
+              <div class="store-info">
+                <div class="info-item">
+                  <div class="info-label">门店地址</div>
+                  <div class="info-value">广东省广州市海珠区某某路456号</div>
+                </div>
+                <div class="info-item">
+                  <div class="info-label">联系电话</div>
+                  <div class="info-value">020-87654321</div>
+                </div>
+                <div class="info-item">
+                  <div class="info-label">营业时间</div>
+                  <div class="info-value">10:00-22:00</div>
+                </div>
+                <div class="info-item">
+                  <div class="info-label">门店类型</div>
+                  <div class="info-value">美容洗车</div>
+                </div>
+              </div>
+              <div class="store-footer">
+                <div class="store-stats">
+                  <div class="stat-item">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">今日订单</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-value">¥0</div>
+                    <div class="stat-label">今日销售额</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-value">-</div>
+                    <div class="stat-label">评分</div>
+                  </div>
+                </div>
+                <div class="store-actions">
+                  <a href="#" class="action-btn">查看详情</a>
+                  <a href="#" class="action-btn primary">通过审核</a>
+                  <a href="#" class="action-btn danger">拒绝审核</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 

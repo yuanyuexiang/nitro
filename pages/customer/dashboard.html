@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>车主小程序 - 首页</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <style>
+    body {
+      font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f7f9;
+    }
+    .header {
+      background: #fff;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 1px 3px #eee;
+    }
+    .header-title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .header-right {
+      display: flex;
+      gap: 15px;
+    }
+    .header-right a {
+      color: #666;
+      text-decoration: none;
+    }
+    .car-info {
+      background: #fff;
+      margin: 15px;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px #eee;
+    }
+    .car-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .car-name {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .car-status {
+      color: #409eff;
+      font-size: 14px;
+    }
+    .car-details {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .detail-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .detail-label {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+    .detail-value {
+      color: #222;
+      font-size: 14px;
+    }
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      padding: 15px;
+    }
+    .menu-item {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 1px 3px #eee;
+      text-decoration: none;
+      color: #222;
+    }
+    .menu-item i {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #409eff;
+    }
+    .menu-item span {
+      display: block;
+      font-size: 14px;
+    }
+    .section {
+      background: #fff;
+      margin: 15px;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px #eee;
+    }
+    .section-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .section-title a {
+      color: #409eff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: normal;
+    }
+    .list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .list-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .list-item:last-child {
+      border-bottom: none;
+    }
+    .list-item-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .list-item-icon {
+      width: 40px;
+      height: 40px;
+      background: #f4f7f9;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+    }
+    .list-item-info {
+      flex: 1;
+    }
+    .list-item-title {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+    .list-item-desc {
+      color: #666;
+      font-size: 12px;
+    }
+    .list-item-right {
+      color: #409eff;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-title">我的爱车</div>
+    <div class="header-right">
+      <a href="message_center.html">消息</a>
+      <a href="profile.html">我的</a>
+    </div>
+  </div>
+
+  <div class="car-info">
+    <div class="car-header">
+      <div class="car-name">宝马 3系 2023款</div>
+      <div class="car-status">正常</div>
+    </div>
+    <div class="car-details">
+      <div class="detail-item">
+        <div class="detail-label">车牌号</div>
+        <div class="detail-value">粤A12345</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">行驶里程</div>
+        <div class="detail-value">12,345公里</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">上次保养</div>
+        <div class="detail-value">2024-02-15</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">下次保养</div>
+        <div class="detail-value">2024-08-15</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu">
+    <a href="car_list.html" class="menu-item">
+      <i>🚗</i>
+      <span>车辆管理</span>
+    </a>
+    <a href="repair_list.html" class="menu-item">
+      <i>🔧</i>
+      <span>维修记录</span>
+    </a>
+    <a href="maintenance_list.html" class="menu-item">
+      <i>🛠️</i>
+      <span>保养记录</span>
+    </a>
+    <a href="car_detail.html" class="menu-item">
+      <i>📋</i>
+      <span>车辆详情</span>
+    </a>
+  </div>
+
+  <div class="section">
+    <div class="section-title">
+      <span>最近维修</span>
+      <a href="repair_list.html">查看全部</a>
+    </div>
+    <ul class="list">
+      <li class="list-item">
+        <div class="list-item-left">
+          <div class="list-item-icon">🔧</div>
+          <div class="list-item-info">
+            <div class="list-item-title">更换刹车片</div>
+            <div class="list-item-desc">2024-03-10 14:30</div>
+          </div>
+        </div>
+        <div class="list-item-right">已完成</div>
+      </li>
+      <li class="list-item">
+        <div class="list-item-left">
+          <div class="list-item-icon">🔧</div>
+          <div class="list-item-info">
+            <div class="list-item-title">更换机油</div>
+            <div class="list-item-desc">2024-02-15 10:00</div>
+          </div>
+        </div>
+        <div class="list-item-right">已完成</div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-title">
+      <span>最近保养</span>
+      <a href="maintenance_list.html">查看全部</a>
+    </div>
+    <ul class="list">
+      <li class="list-item">
+        <div class="list-item-left">
+          <div class="list-item-icon">🛠️</div>
+          <div class="list-item-info">
+            <div class="list-item-title">常规保养</div>
+            <div class="list-item-desc">2024-02-15 10:00</div>
+          </div>
+        </div>
+        <div class="list-item-right">已完成</div>
+      </li>
+      <li class="list-item">
+        <div class="list-item-left">
+          <div class="list-item-icon">🛠️</div>
+          <div class="list-item-info">
+            <div class="list-item-title">空调系统保养</div>
+            <div class="list-item-desc">2024-01-20 15:30</div>
+          </div>
+        </div>
+        <div class="list-item-right">已完成</div>
+      </li>
+    </ul>
+  </div>
+</body>
+</html> 

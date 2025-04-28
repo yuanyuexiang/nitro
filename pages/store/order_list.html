@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>订单管理</title>
+  <style>
+    body { font-family: sans-serif; background: #f4f7f9; margin:0; }
+    .nav-bar { background: #fff; height: 48px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold; border-bottom: 1px solid #eee; position: fixed; top: 0; left: 0; width: 100%; z-index: 10;}
+    .page-content { padding-top: 48px; padding-bottom: 60px; }
+    .tab-bar { position: fixed; bottom: 0; left: 0; width: 100%; height: 56px; background: #fff; border-top: 1px solid #eee; display: flex; z-index: 10;}
+    .tab-item { flex: 1; text-align: center; color: #888; font-size: 12px; padding-top: 6px; text-decoration: none;}
+    .tab-item.active { color: #28a745; font-weight: bold;}
+    .tab-item .icon { font-size: 22px; display: block; margin-bottom: 2px;}
+    .header { background: #fff; padding: 15px; font-size: 18px; font-weight: bold; border-bottom: 1px solid #eee; }
+    .order-list { padding: 10px 15px; }
+    .order-card { background: #fff; border-radius: 8px; margin-bottom: 12px; box-shadow: 0 1px 3px #eee; }
+    .order-header { padding: 10px 15px; border-bottom: 1px solid #f4f7f9; display: flex; justify-content: space-between; }
+    .order-id { color: #888; font-size: 13px; }
+    .order-status { font-size: 13px; color: #007bff; }
+    .order-body { padding: 15px; }
+    .product-title { font-size: 15px; font-weight: 500; }
+    .order-footer { padding: 10px 15px; border-top: 1px solid #f4f7f9; text-align: right; }
+    .order-footer button { padding: 6px 18px; background: #007bff; color: #fff; border: none; border-radius: 4px; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="nav-bar">订单管理</div>
+  <div class="page-content">
+    <div style="padding:20px;text-align:center;color:#888;">这里是订单管理内容区</div>
+  </div>
+  <div class="tab-bar">
+    <a href="dashboard.html" class="tab-item"><div class="icon">🏠</div>首页</a>
+    <a href="product_list.html" class="tab-item"><div class="icon">🛒</div>商城</a>
+    <a href="order_list.html" class="tab-item active"><div class="icon">📦</div>订单</a>
+    <a href="profile.html" class="tab-item"><div class="icon">👤</div>我的</a>
+  </div>
+  <div class="header">订单管理</div>
+  <div class="order-list">
+    <div class="order-card">
+      <div class="order-header">
+        <span class="order-id">订单号: 20240315001</span>
+        <span class="order-status">待收货</span>
+      </div>
+      <div class="order-body">
+        <div class="product-title">高性能刹车片 x1</div>
+        <div>总价：¥ 450.00</div>
+      </div>
+      <div class="order-footer">
+        <button>确认收货</button>
+        <button style="background:#28a745;">售后</button>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">
+        <span class="order-id">订单号: 20240314005</span>
+        <span class="order-status" style="color:#28a745;">已完成</span>
+      </div>
+      <div class="order-body">
+        <div class="product-title">定制轮毂 19寸 x2</div>
+        <div>总价：¥ 3600.00</div>
+      </div>
+      <div class="order-footer">
+        <button>售后</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 

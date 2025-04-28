@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>车主小程序 - 维修详情</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <style>
+    body {
+      font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f7f9;
+    }
+    .header {
+      background: #fff;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 1px 3px #eee;
+    }
+    .header-title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .header-right {
+      display: flex;
+      gap: 15px;
+    }
+    .header-right a {
+      color: #666;
+      text-decoration: none;
+    }
+    .content {
+      padding: 15px;
+    }
+    .section {
+      background: #fff;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 1px 3px #eee;
+    }
+    .section-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+    .info-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .info-label {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+    .info-value {
+      color: #222;
+      font-size: 14px;
+    }
+    .timeline {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .timeline-item {
+      position: relative;
+      padding-left: 20px;
+      padding-bottom: 20px;
+    }
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+    .timeline-item:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 10px;
+      height: 10px;
+      background: #409eff;
+      border-radius: 50%;
+    }
+    .timeline-item:after {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 10px;
+      width: 2px;
+      height: calc(100% - 10px);
+      background: #e3e8ee;
+    }
+    .timeline-item:last-child:after {
+      display: none;
+    }
+    .timeline-time {
+      color: #666;
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+    .timeline-title {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+    .timeline-desc {
+      color: #666;
+      font-size: 12px;
+    }
+    .action-btn {
+      padding: 6px 12px;
+      border: 1px solid #e3e8ee;
+      border-radius: 4px;
+      background: #fff;
+      color: #666;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    .action-btn.primary {
+      background: #409eff;
+      color: #fff;
+      border-color: #409eff;
+    }
+    .action-btn.danger {
+      background: #ff4d4f;
+      color: #fff;
+      border-color: #ff4d4f;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-title">维修详情</div>
+    <div class="header-right">
+      <a href="message_center.html">消息</a>
+      <a href="profile.html">我的</a>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="section">
+      <div class="section-title">基本信息</div>
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="info-label">维修项目</div>
+          <div class="info-value">更换刹车片</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">维修状态</div>
+          <div class="info-value">已完成</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">维修门店</div>
+          <div class="info-value">某某汽车维修中心</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">维修技师</div>
+          <div class="info-value">张师傅</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">维修费用</div>
+          <div class="info-value">¥299.00</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">维修时间</div>
+          <div class="info-value">2024-03-10 14:30</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">维修进度</div>
+      <ul class="timeline">
+        <li class="timeline-item">
+          <div class="timeline-time">2024-03-10 14:30</div>
+          <div class="timeline-title">提交维修申请</div>
+          <div class="timeline-desc">车主提交维修申请，等待门店确认</div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-time">2024-03-10 14:35</div>
+          <div class="timeline-title">门店确认</div>
+          <div class="timeline-desc">门店已确认维修申请，准备开始维修</div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-time">2024-03-10 15:00</div>
+          <div class="timeline-title">开始维修</div>
+          <div class="timeline-desc">维修技师开始更换刹车片</div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-time">2024-03-10 16:30</div>
+          <div class="timeline-title">维修完成</div>
+          <div class="timeline-desc">刹车片更换完成，等待车主确认</div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-time">2024-03-10 17:00</div>
+          <div class="timeline-title">车主确认</div>
+          <div class="timeline-desc">车主已确认维修完成，支付维修费用</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">维修项目</div>
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="info-label">项目名称</div>
+          <div class="info-value">更换刹车片</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">项目费用</div>
+          <div class="info-value">¥299.00</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">工时费</div>
+          <div class="info-value">¥100.00</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">材料费</div>
+          <div class="info-value">¥199.00</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">操作</div>
+      <div style="display: flex; gap: 10px;">
+        <a href="#" class="action-btn primary">评价</a>
+        <a href="#" class="action-btn">联系门店</a>
+        <a href="#" class="action-btn">联系技师</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>我的</title>
+  <style>
+    body { font-family: sans-serif; background: #f4f7f9; margin:0; }
+    .nav-bar { background: #fff; height: 48px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold; border-bottom: 1px solid #eee; position: fixed; top: 0; left: 0; width: 100%; z-index: 10;}
+    .page-content { padding-top: 48px; padding-bottom: 60px; }
+    .tab-bar { position: fixed; bottom: 0; left: 0; width: 100%; height: 56px; background: #fff; border-top: 1px solid #eee; display: flex; z-index: 10;}
+    .tab-item { flex: 1; text-align: center; color: #888; font-size: 12px; padding-top: 6px; text-decoration: none;}
+    .tab-item.active { color: #28a745; font-weight: bold;}
+    .tab-item .icon { font-size: 22px; display: block; margin-bottom: 2px;}
+    .avatar { width: 60px; height: 60px; border-radius: 50%; background: #e9ecef; margin: 30px auto 10px; }
+    .name { font-size: 18px; font-weight: bold; text-align: center; }
+    .menu { margin: 20px 15px; }
+    .menu-item { background: #fff; border-radius: 8px; margin-bottom: 12px; padding: 15px; box-shadow: 0 1px 3px #eee; font-size: 16px; color: #333; }
+    .menu-item a { color: #28a745; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="nav-bar">我的</div>
+  <div class="page-content">
+    <div style="padding:20px;text-align:center;color:#888;">这里是我的内容区</div>
+  </div>
+  <div class="tab-bar">
+    <a href="dashboard.html" class="tab-item"><div class="icon">🏠</div>首页</a>
+    <a href="product_list.html" class="tab-item"><div class="icon">🛒</div>商城</a>
+    <a href="order_list.html" class="tab-item"><div class="icon">📦</div>订单</a>
+    <a href="profile.html" class="tab-item active"><div class="icon">👤</div>我的</a>
+  </div>
+</body>
+</html> 

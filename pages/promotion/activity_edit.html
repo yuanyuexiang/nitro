@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>品牌推广小程序 - 创建活动</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <style>
+    body {
+      font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f7f9;
+    }
+    .header {
+      background: #fff;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 1px 3px #eee;
+    }
+    .header-title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .header-right {
+      display: flex;
+      gap: 15px;
+    }
+    .header-right a {
+      color: #666;
+      text-decoration: none;
+    }
+    .form-container {
+      background: #fff;
+      padding: 20px;
+      margin: 15px;
+      border-radius: 8px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-label {
+      display: block;
+      margin-bottom: 8px;
+      color: #222;
+      font-size: 14px;
+    }
+    .form-input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #e3e8ee;
+      border-radius: 6px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    .form-textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #e3e8ee;
+      border-radius: 6px;
+      font-size: 14px;
+      min-height: 100px;
+      resize: vertical;
+      box-sizing: border-box;
+    }
+    .form-select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #e3e8ee;
+      border-radius: 6px;
+      font-size: 14px;
+      background: #fff;
+      box-sizing: border-box;
+    }
+    .form-date {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #e3e8ee;
+      border-radius: 6px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    .form-actions {
+      display: flex;
+      gap: 15px;
+      margin-top: 30px;
+    }
+    .form-btn {
+      flex: 1;
+      padding: 12px;
+      border: 1px solid #e3e8ee;
+      border-radius: 6px;
+      background: #fff;
+      color: #666;
+      font-size: 14px;
+      text-align: center;
+      text-decoration: none;
+    }
+    .form-btn.primary {
+      background: #409eff;
+      color: #fff;
+      border-color: #409eff;
+    }
+    .form-btn.danger {
+      background: #ff4d4f;
+      color: #fff;
+      border-color: #ff4d4f;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-title">创建活动</div>
+    <div class="header-right">
+      <a href="message_center.html">消息</a>
+      <a href="profile.html">我的</a>
+    </div>
+  </div>
+
+  <div class="form-container">
+    <form>
+      <div class="form-group">
+        <label class="form-label">活动标题</label>
+        <input type="text" class="form-input" placeholder="请输入活动标题">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">活动品牌</label>
+        <select class="form-select">
+          <option value="">请选择品牌</option>
+          <option value="bmw">宝马</option>
+          <option value="benz">奔驰</option>
+          <option value="audi">奥迪</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">活动类型</label>
+        <select class="form-select">
+          <option value="">请选择活动类型</option>
+          <option value="promo">促销活动</option>
+          <option value="event">品牌活动</option>
+          <option value="test">试驾活动</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">活动预算</label>
+        <input type="number" class="form-input" placeholder="请输入活动预算">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">开始时间</label>
+        <input type="date" class="form-date">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">结束时间</label>
+        <input type="date" class="form-date">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">活动描述</label>
+        <textarea class="form-textarea" placeholder="请输入活动描述"></textarea>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="form-btn">取消</button>
+        <button type="submit" class="form-btn primary">保存</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html> 

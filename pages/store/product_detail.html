@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>商品详情</title>
+  <style>
+    body { font-family: sans-serif; background: #f4f7f9; margin:0; }
+    .nav-bar { background: #fff; height: 48px; display: flex; align-items: center; border-bottom: 1px solid #eee; position: fixed; top: 0; left: 0; width: 100%; z-index: 10;}
+    .nav-bar .back { width: 48px; text-align: center; font-size: 20px; color: #28a745; cursor: pointer;}
+    .nav-bar .title { flex: 1; text-align: center; font-size: 18px; font-weight: bold;}
+    .page-content { padding-top: 48px; }
+    .header { background: #fff; padding: 15px; font-size: 18px; font-weight: bold; border-bottom: 1px solid #eee; }
+    .main { padding: 15px; }
+    .image { width: 100%; height: 180px; background: #e9ecef; border-radius: 8px; margin-bottom: 15px; }
+    .title { font-size: 20px; font-weight: bold; margin-bottom: 8px; }
+    .desc { color: #666; margin-bottom: 10px; }
+    .price { color: #e44d26; font-size: 18px; font-weight: bold; margin-bottom: 10px; }
+    .actions { margin-top: 20px; }
+    .actions button { width: 100%; padding: 12px; background: #007bff; color: #fff; border: none; border-radius: 4px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <div class="nav-bar">
+    <div class="back" onclick="history.back()">‹</div>
+    <div class="title">商品详情</div>
+    <div style="width:48px"></div>
+  </div>
+  <div class="page-content">
+    <div class="header">商品详情</div>
+    <div class="main">
+      <div class="image"></div>
+      <div class="title">高性能刹车片</div>
+      <div class="desc">适配多车型，耐高温，寿命长</div>
+      <div class="price">¥ 450.00</div>
+      <div class="actions">
+        <button>加入购物车</button>
+        <button style="margin-top:10px;background:#28a745;">立即购买</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 

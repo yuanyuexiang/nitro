@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>供应商平台 - 结算管理</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <style>
+    body {
+      font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f7f9;
+    }
+    .header {
+      background: #fff;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 1px 3px #eee;
+    }
+    .header-title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .header-right {
+      display: flex;
+      gap: 15px;
+    }
+    .header-right a {
+      color: #666;
+      text-decoration: none;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      padding: 15px;
+    }
+    .stat-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px #eee;
+    }
+    .stat-title {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    .stat-value {
+      font-size: 24px;
+      font-weight: bold;
+      color: #222;
+    }
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      padding: 0 15px 15px;
+      background: #fff;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .filter-btn {
+      padding: 8px 15px;
+      border: 1px solid #e3e8ee;
+      border-radius: 6px;
+      background: #fff;
+      color: #666;
+      font-size: 14px;
+    }
+    .filter-btn.active {
+      background: #409eff;
+      color: #fff;
+      border-color: #409eff;
+    }
+    .settlement-list {
+      padding: 15px;
+    }
+    .settlement-item {
+      background: #fff;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 1px 3px #eee;
+    }
+    .settlement-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+    }
+    .settlement-id {
+      font-weight: bold;
+    }
+    .settlement-status {
+      color: #409eff;
+    }
+    .settlement-time {
+      color: #999;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    .settlement-info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .info-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .info-label {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+    .info-value {
+      color: #222;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .settlement-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid #eee;
+    }
+    .settlement-total {
+      color: #ff4d4f;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .settlement-actions {
+      display: flex;
+      gap: 10px;
+    }
+    .action-btn {
+      padding: 6px 12px;
+      border: 1px solid #e3e8ee;
+      border-radius: 4px;
+      background: #fff;
+      color: #666;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    .action-btn.primary {
+      background: #409eff;
+      color: #fff;
+      border-color: #409eff;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-title">结算管理</div>
+    <div class="header-right">
+      <a href="message_center.html">消息</a>
+      <a href="profile.html">我的</a>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat-card">
+      <div class="stat-title">待结算金额</div>
+      <div class="stat-value">¥12,800</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-title">本月已结算</div>
+      <div class="stat-value">¥25,600</div>
+    </div>
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn active">全部</button>
+    <button class="filter-btn">待结算</button>
+    <button class="filter-btn">已结算</button>
+    <button class="filter-btn">已取消</button>
+  </div>
+
+  <div class="settlement-list">
+    <div class="settlement-item">
+      <div class="settlement-header">
+        <div class="settlement-id">结算单号：JS202403150001</div>
+        <div class="settlement-status">待结算</div>
+      </div>
+      <div class="settlement-time">2024-03-15 10:00</div>
+      <div class="settlement-info">
+        <div class="info-item">
+          <div class="info-label">订单数量</div>
+          <div class="info-value">12笔</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">结算周期</div>
+          <div class="info-value">2024-03-01至2024-03-15</div>
+        </div>
+      </div>
+      <div class="settlement-footer">
+        <div class="settlement-total">¥5,280.00</div>
+        <div class="settlement-actions">
+          <a href="#" class="action-btn">查看详情</a>
+          <a href="#" class="action-btn primary">申请结算</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="settlement-item">
+      <div class="settlement-header">
+        <div class="settlement-id">结算单号：JS202403140001</div>
+        <div class="settlement-status">已结算</div>
+      </div>
+      <div class="settlement-time">2024-03-14 15:30</div>
+      <div class="settlement-info">
+        <div class="info-item">
+          <div class="info-label">订单数量</div>
+          <div class="info-value">8笔</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">结算周期</div>
+          <div class="info-value">2024-03-01至2024-03-14</div>
+        </div>
+      </div>
+      <div class="settlement-footer">
+        <div class="settlement-total">¥3,840.00</div>
+        <div class="settlement-actions">
+          <a href="#" class="action-btn">查看详情</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="settlement-item">
+      <div class="settlement-header">
+        <div class="settlement-id">结算单号：JS202403130001</div>
+        <div class="settlement-status">已结算</div>
+      </div>
+      <div class="settlement-time">2024-03-13 09:00</div>
+      <div class="settlement-info">
+        <div class="info-item">
+          <div class="info-label">订单数量</div>
+          <div class="info-value">15笔</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">结算周期</div>
+          <div class="info-value">2024-03-01至2024-03-13</div>
+        </div>
+      </div>
+      <div class="settlement-footer">
+        <div class="settlement-total">¥7,200.00</div>
+        <div class="settlement-actions">
+          <a href="#" class="action-btn">查看详情</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 

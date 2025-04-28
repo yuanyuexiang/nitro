@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>订单详情</title>
+  <style>
+    body { font-family: sans-serif; background: #f4f7f9; margin:0; }
+    .nav-bar { background: #fff; height: 48px; display: flex; align-items: center; border-bottom: 1px solid #eee; position: fixed; top: 0; left: 0; width: 100%; z-index: 10;}
+    .nav-bar .back { width: 48px; text-align: center; font-size: 20px; color: #ff5000; cursor: pointer;}
+    .nav-bar .title { flex: 1; text-align: center; font-size: 18px; font-weight: bold;}
+    .page-content { padding-top: 48px; }
+    .header { background: #fff; padding: 15px; font-size: 18px; font-weight: bold; border-bottom: 1px solid #eee; }
+    .section { background: #fff; border-radius: 8px; margin: 15px; padding: 15px; box-shadow: 0 1px 3px #eee; }
+    .row { display: flex; justify-content: space-between; margin-bottom: 10px; }
+    .label { color: #888; }
+    .value { font-weight: 500; }
+    .footer { position: fixed; bottom: 0; left: 0; width: 100%; background: #fff; border-top: 1px solid #eee; padding: 15px; text-align: right; }
+    .footer button { padding: 10px 30px; background: #007bff; color: #fff; border: none; border-radius: 4px; font-size: 16px; }
+    .actions { margin: 20px 15px; }
+    .actions a { width: 100%; padding: 12px; background: #007bff; color: #fff; border: none; border-radius: 4px; font-size: 16px; display: block; margin-bottom: 10px; text-align: center; text-decoration: none;}
+    .actions a:last-child { margin-bottom: 0; }
+  </style>
+</head>
+<body>
+  <div class="nav-bar">
+    <div class="back" onclick="history.back()">‹</div>
+    <div class="title">订单详情</div>
+    <div style="width:48px"></div>
+  </div>
+  <div class="page-content">
+    <div class="header">订单详情</div>
+    <div class="section">
+      <div class="row"><span class="label">订单号</span><span class="value">20240315001</span></div>
+      <div class="row"><span class="label">下单时间</span><span class="value">2024-03-15 10:00</span></div>
+      <div class="row"><span class="label">商品</span><span class="value">高性能刹车片 x1</span></div>
+      <div class="row"><span class="label">总价</span><span class="value">¥ 450.00</span></div>
+      <div class="row"><span class="label">状态</span><span class="value" style="color:#007bff;">待收货</span></div>
+    </div>
+    <div class="footer">
+      <button>售后</button>
+    </div>
+    <div class="actions">
+      <a href="aftersale_detail.html">售后详情</a>
+    </div>
+  </div>
+</body>
+</html> 

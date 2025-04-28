@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>供应商平台 - 首页</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <style>
+    body {
+      font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f7f9;
+    }
+    .header {
+      background: #fff;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 1px 3px #eee;
+    }
+    .header-title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .header-right {
+      display: flex;
+      gap: 15px;
+    }
+    .header-right a {
+      color: #666;
+      text-decoration: none;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      padding: 15px;
+    }
+    .stat-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px #eee;
+    }
+    .stat-title {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    .stat-value {
+      font-size: 24px;
+      font-weight: bold;
+      color: #222;
+    }
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      padding: 15px;
+    }
+    .menu-item {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 1px 3px #eee;
+      text-decoration: none;
+      color: #222;
+    }
+    .menu-item i {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #409eff;
+    }
+    .menu-item span {
+      display: block;
+      font-size: 14px;
+    }
+    .recent-orders {
+      background: #fff;
+      margin: 15px;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px #eee;
+    }
+    .section-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    .order-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .order-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .order-item:last-child {
+      border-bottom: none;
+    }
+    .order-title {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+    .order-id {
+      font-weight: bold;
+    }
+    .order-status {
+      color: #409eff;
+    }
+    .order-info {
+      color: #666;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-title">供应商平台</div>
+    <div class="header-right">
+      <a href="message_center.html">消息</a>
+      <a href="profile.html">我的</a>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat-card">
+      <div class="stat-title">今日订单</div>
+      <div class="stat-value">12</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-title">今日销售额</div>
+      <div class="stat-value">¥3,580</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-title">待发货</div>
+      <div class="stat-value">5</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-title">待结算</div>
+      <div class="stat-value">¥12,800</div>
+    </div>
+  </div>
+
+  <div class="menu">
+    <a href="product_list.html" class="menu-item">
+      <i>📦</i>
+      <span>商品管理</span>
+    </a>
+    <a href="order_list.html" class="menu-item">
+      <i>📋</i>
+      <span>订单管理</span>
+    </a>
+    <a href="settlement_list.html" class="menu-item">
+      <i>💰</i>
+      <span>结算管理</span>
+    </a>
+    <a href="profile.html" class="menu-item">
+      <i>👤</i>
+      <span>个人中心</span>
+    </a>
+  </div>
+
+  <div class="recent-orders">
+    <div class="section-title">最近订单</div>
+    <ul class="order-list">
+      <li class="order-item">
+        <div class="order-title">
+          <span class="order-id">订单号：202403150001</span>
+          <span class="order-status">待发货</span>
+        </div>
+        <div class="order-info">
+          高性能刹车片 x 2 | ￥1,280
+        </div>
+      </li>
+      <li class="order-item">
+        <div class="order-title">
+          <span class="order-id">订单号：202403150002</span>
+          <span class="order-status">已发货</span>
+        </div>
+        <div class="order-info">
+          机油滤芯 x 4 | ￥960
+        </div>
+      </li>
+      <li class="order-item">
+        <div class="order-title">
+          <span class="order-id">订单号：202403150003</span>
+          <span class="order-status">已完成</span>
+        </div>
+        <div class="order-info">
+          空气滤芯 x 2 | ￥480
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+</html> 

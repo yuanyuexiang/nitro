@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>购物车</title>
+  <style>
+    body { font-family: sans-serif; background: #f4f7f9; }
+    .header { background: #fff; padding: 15px; font-size: 18px; font-weight: bold; border-bottom: 1px solid #eee; }
+    .cart-list { padding: 10px 15px; }
+    .cart-item { background: #fff; border-radius: 8px; margin-bottom: 12px; padding: 15px; display: flex; gap: 12px; box-shadow: 0 1px 3px #eee; align-items: center; }
+    .cart-item .image { width: 60px; height: 60px; background: #e9ecef; border-radius: 6px; }
+    .cart-item .info { flex: 1; }
+    .cart-item .title { font-size: 15px; font-weight: 500; margin-bottom: 5px; }
+    .cart-item .price { color: #e44d26; font-size: 15px; font-weight: bold; }
+    .cart-item .qty { font-size: 13px; color: #666; }
+    .cart-item .remove { color: #dc3545; font-size: 13px; cursor: pointer; }
+    .footer { position: fixed; bottom: 0; left: 0; width: 100%; background: #fff; border-top: 1px solid #eee; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
+    .footer .total { font-size: 16px; font-weight: bold; }
+    .footer button { padding: 10px 30px; background: #007bff; color: #fff; border: none; border-radius: 4px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <div class="header">购物车</div>
+  <div class="cart-list">
+    <div class="cart-item">
+      <div class="image"></div>
+      <div class="info">
+        <div class="title">高性能刹车片</div>
+        <div class="price">¥ 450.00</div>
+        <div class="qty">数量：1</div>
+      </div>
+      <div class="remove">删除</div>
+    </div>
+    <div class="cart-item">
+      <div class="image"></div>
+      <div class="info">
+        <div class="title">定制轮毂 19寸</div>
+        <div class="price">¥ 1800.00</div>
+        <div class="qty">数量：2</div>
+      </div>
+      <div class="remove">删除</div>
+    </div>
+  </div>
+  <div class="footer">
+    <span class="total">合计：¥ 4050.00</span>
+    <button>去结算</button>
+  </div>
+</body>
+</html> 

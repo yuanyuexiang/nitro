@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>车主小程序 - 维修记录</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <style>
+    body {
+      font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f7f9;
+    }
+    .header {
+      background: #fff;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 1px 3px #eee;
+    }
+    .header-title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .header-right {
+      display: flex;
+      gap: 15px;
+    }
+    .header-right a {
+      color: #666;
+      text-decoration: none;
+    }
+    .search-bar {
+      padding: 15px;
+      background: #fff;
+      margin-bottom: 15px;
+    }
+    .search-input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #e3e8ee;
+      border-radius: 8px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      padding: 0 15px 15px;
+      background: #fff;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .filter-btn {
+      padding: 8px 15px;
+      border: 1px solid #e3e8ee;
+      border-radius: 6px;
+      background: #fff;
+      color: #666;
+      font-size: 14px;
+    }
+    .filter-btn.active {
+      background: #409eff;
+      color: #fff;
+      border-color: #409eff;
+    }
+    .repair-list {
+      padding: 15px;
+    }
+    .repair-item {
+      background: #fff;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 1px 3px #eee;
+    }
+    .repair-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+    }
+    .repair-title {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .repair-status {
+      color: #409eff;
+      font-size: 14px;
+    }
+    .repair-info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .info-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .info-label {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+    .info-value {
+      color: #222;
+      font-size: 14px;
+    }
+    .repair-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid #eee;
+    }
+    .repair-time {
+      color: #666;
+      font-size: 14px;
+    }
+    .repair-actions {
+      display: flex;
+      gap: 10px;
+    }
+    .action-btn {
+      padding: 6px 12px;
+      border: 1px solid #e3e8ee;
+      border-radius: 4px;
+      background: #fff;
+      color: #666;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    .action-btn.primary {
+      background: #409eff;
+      color: #fff;
+      border-color: #409eff;
+    }
+    .action-btn.danger {
+      background: #ff4d4f;
+      color: #fff;
+      border-color: #ff4d4f;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-title">维修记录</div>
+    <div class="header-right">
+      <a href="message_center.html">消息</a>
+      <a href="profile.html">我的</a>
+    </div>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" class="search-input" placeholder="搜索维修项目、门店">
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn active">全部</button>
+    <button class="filter-btn">待维修</button>
+    <button class="filter-btn">维修中</button>
+    <button class="filter-btn">已完成</button>
+    <button class="filter-btn">已取消</button>
+  </div>
+
+  <div class="repair-list">
+    <div class="repair-item">
+      <div class="repair-header">
+        <div class="repair-title">更换刹车片</div>
+        <div class="repair-status">已完成</div>
+      </div>
+      <div class="repair-info">
+        <div class="info-item">
+          <div class="info-label">维修门店</div>
+          <div class="info-value">某某汽车维修中心</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">维修项目</div>
+          <div class="info-value">更换刹车片</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">维修费用</div>
+          <div class="info-value">¥299.00</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">维修技师</div>
+          <div class="info-value">张师傅</div>
+        </div>
+      </div>
+      <div class="repair-footer">
+        <div class="repair-time">维修时间：2024-03-10 14:30</div>
+        <div class="repair-actions">
+          <a href="repair_detail.html" class="action-btn">查看详情</a>
+          <a href="#" class="action-btn">评价</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="repair-item">
+      <div class="repair-header">
+        <div class="repair-title">更换机油</div>
+        <div class="repair-status">已完成</div>
+      </div>
+      <div class="repair-info">
+        <div class="info-item">
+          <div class="info-label">维修门店</div>
+          <div class="info-value">某某汽车维修中心</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">维修项目</div>
+          <div class="info-value">更换机油</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">维修费用</div>
+          <div class="info-value">¥199.00</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">维修技师</div>
+          <div class="info-value">李师傅</div>
+        </div>
+      </div>
+      <div class="repair-footer">
+        <div class="repair-time">维修时间：2024-02-15 10:00</div>
+        <div class="repair-actions">
+          <a href="repair_detail.html" class="action-btn">查看详情</a>
+          <a href="#" class="action-btn">评价</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 

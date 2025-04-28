@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>车主小程序 - 保养记录</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <style>
+    body {
+      font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f7f9;
+    }
+    .header {
+      background: #fff;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 1px 3px #eee;
+    }
+    .header-title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .header-right {
+      display: flex;
+      gap: 15px;
+    }
+    .header-right a {
+      color: #666;
+      text-decoration: none;
+    }
+    .search-bar {
+      padding: 15px;
+      background: #fff;
+      margin-bottom: 15px;
+    }
+    .search-input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #e3e8ee;
+      border-radius: 8px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      padding: 0 15px 15px;
+      background: #fff;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .filter-btn {
+      padding: 8px 15px;
+      border: 1px solid #e3e8ee;
+      border-radius: 6px;
+      background: #fff;
+      color: #666;
+      font-size: 14px;
+    }
+    .filter-btn.active {
+      background: #409eff;
+      color: #fff;
+      border-color: #409eff;
+    }
+    .maintenance-list {
+      padding: 15px;
+    }
+    .maintenance-item {
+      background: #fff;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 1px 3px #eee;
+    }
+    .maintenance-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+    }
+    .maintenance-title {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .maintenance-status {
+      color: #409eff;
+      font-size: 14px;
+    }
+    .maintenance-info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .info-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .info-label {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+    .info-value {
+      color: #222;
+      font-size: 14px;
+    }
+    .maintenance-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid #eee;
+    }
+    .maintenance-time {
+      color: #666;
+      font-size: 14px;
+    }
+    .maintenance-actions {
+      display: flex;
+      gap: 10px;
+    }
+    .action-btn {
+      padding: 6px 12px;
+      border: 1px solid #e3e8ee;
+      border-radius: 4px;
+      background: #fff;
+      color: #666;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    .action-btn.primary {
+      background: #409eff;
+      color: #fff;
+      border-color: #409eff;
+    }
+    .action-btn.danger {
+      background: #ff4d4f;
+      color: #fff;
+      border-color: #ff4d4f;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-title">保养记录</div>
+    <div class="header-right">
+      <a href="message_center.html">消息</a>
+      <a href="profile.html">我的</a>
+    </div>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" class="search-input" placeholder="搜索保养项目、门店">
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn active">全部</button>
+    <button class="filter-btn">待保养</button>
+    <button class="filter-btn">保养中</button>
+    <button class="filter-btn">已完成</button>
+    <button class="filter-btn">已取消</button>
+  </div>
+
+  <div class="maintenance-list">
+    <div class="maintenance-item">
+      <div class="maintenance-header">
+        <div class="maintenance-title">常规保养</div>
+        <div class="maintenance-status">已完成</div>
+      </div>
+      <div class="maintenance-info">
+        <div class="info-item">
+          <div class="info-label">保养门店</div>
+          <div class="info-value">某某汽车维修中心</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">保养项目</div>
+          <div class="info-value">常规保养</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">保养费用</div>
+          <div class="info-value">¥599.00</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">保养技师</div>
+          <div class="info-value">张师傅</div>
+        </div>
+      </div>
+      <div class="maintenance-footer">
+        <div class="maintenance-time">保养时间：2024-02-15 10:00</div>
+        <div class="maintenance-actions">
+          <a href="maintenance_detail.html" class="action-btn">查看详情</a>
+          <a href="#" class="action-btn">评价</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="maintenance-item">
+      <div class="maintenance-header">
+        <div class="maintenance-title">空调系统保养</div>
+        <div class="maintenance-status">已完成</div>
+      </div>
+      <div class="maintenance-info">
+        <div class="info-item">
+          <div class="info-label">保养门店</div>
+          <div class="info-value">某某汽车维修中心</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">保养项目</div>
+          <div class="info-value">空调系统保养</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">保养费用</div>
+          <div class="info-value">¥399.00</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">保养技师</div>
+          <div class="info-value">李师傅</div>
+        </div>
+      </div>
+      <div class="maintenance-footer">
+        <div class="maintenance-time">保养时间：2024-01-20 15:30</div>
+        <div class="maintenance-actions">
+          <a href="maintenance_detail.html" class="action-btn">查看详情</a>
+          <a href="#" class="action-btn">评价</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 

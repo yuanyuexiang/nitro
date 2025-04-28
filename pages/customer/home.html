@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>品宣首页</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="../common/common.css">
+  <style>
+    body { font-family: sans-serif; background: #f4f7f9; margin:0; }
+    .nav-bar { background: #fff; height: 48px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold; border-bottom: 1px solid #eee; position: fixed; top: 0; left: 0; width: 100%; z-index: 10;}
+    .page-content { padding-top: 48px; padding-bottom: 60px; }
+    .tab-bar { position: fixed; bottom: 0; left: 0; width: 100%; height: 56px; background: #fff; border-top: 1px solid #eee; display: flex; z-index: 10;}
+    .tab-item { flex: 1; text-align: center; color: #888; font-size: 12px; padding-top: 6px; text-decoration: none;}
+    .tab-item.active { color: #ff5000; font-weight: bold;}
+    .tab-item .icon { font-size: 22px; display: block; margin-bottom: 2px;}
+    .top-bar { background: #fff; padding: 10px 15px; display: flex; align-items: center; }
+    .search { flex: 1; background: #f0f2f5; border-radius: 18px; padding: 8px 15px; color: #909399; }
+    .avatar { width: 32px; height: 32px; border-radius: 50%; background: #e9ecef; margin-left: 15px; }
+    .banner { width: 100%; height: 180px; background: #e9ecef; margin-bottom: 12px; display: flex; align-items: center; justify-content: center; color: #bbb; font-size: 20px; }
+    .section { background: #fff; border-radius: 8px; margin: 0 12px 12px 12px; box-shadow: 0 1px 4px #eee; }
+    .section-title { padding: 12px 15px; font-weight: bold; font-size: 16px; }
+    .car-filter { display: flex; justify-content: space-around; padding: 15px 10px; }
+    .filter-item { text-align: center; font-size: 13px; color: #555; }
+    .filter-item .icon { width: 45px; height: 45px; background: #f0f2f5; border-radius: 10px; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; font-size: 22px; color: #007bff; }
+    .scheme-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 15px; }
+    .scheme-card { background: #fff; border-radius: 6px; box-shadow: 0 1px 3px #eee; text-decoration: none; color: inherit;}
+    .scheme-card .image { width: 100%; height: 110px; background: #f0f2f5; }
+    .scheme-card .content { padding: 10px; }
+    .scheme-card .title { font-size: 14px; font-weight: 500; margin-bottom: 6px; }
+    .scheme-card .price { font-size: 13px; color: #e44d26; font-weight: 500; }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <div class="nav-bar">品宣首页</div>
+    <div class="page-content">
+      <h2>欢迎来到品宣首页</h2>
+      <a href="scheme_detail.html">查看方案详情</a>
+    </div>
+    <div class="tab-bar">
+      <a href="home.html" class="active">首页</a>
+      <a href="car_select.html">选车</a>
+      <a href="profile.html">我的</a>
+    </div>
+  </div>
+</body>
+</html> 

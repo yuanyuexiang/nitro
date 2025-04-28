@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>供应商平台 - 商品详情</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <style>
+    body {
+      font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f7f9;
+    }
+    .header {
+      background: #fff;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 1px 3px #eee;
+    }
+    .header-title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .header-right {
+      display: flex;
+      gap: 15px;
+    }
+    .header-right a {
+      color: #666;
+      text-decoration: none;
+    }
+    .product-images {
+      background: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    .main-image {
+      width: 100%;
+      max-width: 300px;
+      height: 300px;
+      background: #f4f7f9;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
+      border-radius: 8px;
+    }
+    .thumbnail-list {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+      justify-content: center;
+    }
+    .thumbnail {
+      width: 60px;
+      height: 60px;
+      background: #f4f7f9;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
+    }
+    .product-info {
+      background: #fff;
+      margin-top: 15px;
+      padding: 20px;
+    }
+    .product-name {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .product-price {
+      color: #ff4d4f;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    .info-item {
+      display: flex;
+      margin-bottom: 10px;
+    }
+    .info-label {
+      width: 80px;
+      color: #666;
+    }
+    .info-value {
+      flex: 1;
+      color: #222;
+    }
+    .product-description {
+      background: #fff;
+      margin-top: 15px;
+      padding: 20px;
+    }
+    .section-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    .description-content {
+      color: #666;
+      line-height: 1.6;
+    }
+    .action-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #fff;
+      padding: 15px;
+      display: flex;
+      gap: 15px;
+      box-shadow: 0 -1px 3px #eee;
+    }
+    .action-btn {
+      flex: 1;
+      padding: 12px 0;
+      text-align: center;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .action-btn.secondary {
+      background: #fff;
+      color: #409eff;
+      border: 1px solid #409eff;
+    }
+    .action-btn.primary {
+      background: #409eff;
+      color: #fff;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-title">商品详情</div>
+    <div class="header-right">
+      <a href="message_center.html">消息</a>
+      <a href="profile.html">我的</a>
+    </div>
+  </div>
+
+  <div class="product-images">
+    <div class="main-image">商品主图</div>
+    <div class="thumbnail-list">
+      <div class="thumbnail">缩略图1</div>
+      <div class="thumbnail">缩略图2</div>
+      <div class="thumbnail">缩略图3</div>
+      <div class="thumbnail">缩略图4</div>
+    </div>
+  </div>
+
+  <div class="product-info">
+    <div class="product-name">高性能刹车片</div>
+    <div class="product-price">¥640.00</div>
+    <div class="info-item">
+      <div class="info-label">商品编号</div>
+      <div class="info-value">SP202403150001</div>
+    </div>
+    <div class="info-item">
+      <div class="info-label">商品分类</div>
+      <div class="info-value">刹车系统</div>
+    </div>
+    <div class="info-item">
+      <div class="info-label">库存数量</div>
+      <div class="info-value">100件</div>
+    </div>
+    <div class="info-item">
+      <div class="info-label">商品状态</div>
+      <div class="info-value">在售</div>
+    </div>
+  </div>
+
+  <div class="product-description">
+    <div class="section-title">商品描述</div>
+    <div class="description-content">
+      高性能刹车片，采用优质材料制造，具有优异的制动性能和耐磨性。适用于各类轿车，提供安全可靠的制动效果。
+      <br><br>
+      产品特点：
+      <br>
+      1. 优质材料，制动性能优异
+      <br>
+      2. 耐磨性强，使用寿命长
+      <br>
+      3. 低噪音，舒适性好
+      <br>
+      4. 散热性能好，制动稳定
+    </div>
+  </div>
+
+  <div class="action-bar">
+    <a href="#" class="action-btn secondary">编辑</a>
+    <a href="#" class="action-btn primary">保存</a>
+  </div>
+</body>
+</html> 

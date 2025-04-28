@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>商品商城</title>
+  <style>
+    body { font-family: sans-serif; background: #f4f7f9; margin:0; }
+    .nav-bar { background: #fff; height: 48px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold; border-bottom: 1px solid #eee; position: fixed; top: 0; left: 0; width: 100%; z-index: 10;}
+    .page-content { padding-top: 48px; padding-bottom: 60px; }
+    .tab-bar { position: fixed; bottom: 0; left: 0; width: 100%; height: 56px; background: #fff; border-top: 1px solid #eee; display: flex; z-index: 10;}
+    .tab-item { flex: 1; text-align: center; color: #888; font-size: 12px; padding-top: 6px; text-decoration: none;}
+    .tab-item.active { color: #28a745; font-weight: bold;}
+    .tab-item .icon { font-size: 22px; display: block; margin-bottom: 2px;}
+    .product-list { padding: 10px 15px; }
+    .product-card { background: #fff; border-radius: 8px; margin-bottom: 12px; padding: 15px; display: flex; gap: 12px; box-shadow: 0 1px 3px #eee; }
+    .product-card .image { width: 70px; height: 70px; background: #e9ecef; border-radius: 6px; }
+    .product-card .info { flex: 1; }
+    .product-card .title { font-size: 15px; font-weight: 500; margin-bottom: 5px; }
+    .product-card .desc { font-size: 13px; color: #666; margin-bottom: 8px; }
+    .product-card .price { color: #e44d26; font-size: 15px; font-weight: bold; }
+    .product-card .actions { margin-top: 8px; }
+    .product-card .actions button { padding: 6px 12px; background: #007bff; color: #fff; border: none; border-radius: 4px; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div class="nav-bar">商品商城</div>
+  <div class="page-content">
+    <div style="padding:20px;text-align:center;color:#888;">这里是商品商城内容区</div>
+  </div>
+  <div class="tab-bar">
+    <a href="dashboard.html" class="tab-item"><div class="icon">🏠</div>首页</a>
+    <a href="product_list.html" class="tab-item active"><div class="icon">🛒</div>商城</a>
+    <a href="order_list.html" class="tab-item"><div class="icon">📦</div>订单</a>
+    <a href="profile.html" class="tab-item"><div class="icon">👤</div>我的</a>
+  </div>
+  <div class="product-list">
+    <div class="product-card">
+      <div class="image"></div>
+      <div class="info">
+        <div class="title">高性能刹车片</div>
+        <div class="desc">适配多车型，耐高温，寿命长</div>
+        <div class="price">¥ 450.00</div>
+        <div class="actions"><button>加入购物车</button></div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="image"></div>
+      <div class="info">
+        <div class="title">定制轮毂 19寸</div>
+        <div class="desc">多色可选，轻量化设计</div>
+        <div class="price">¥ 1800.00</div>
+        <div class="actions"><button>加入购物车</button></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 

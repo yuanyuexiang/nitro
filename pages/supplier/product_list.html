@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>供应商平台 - 商品管理</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <style>
+    body {
+      font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f7f9;
+    }
+    .header {
+      background: #fff;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 1px 3px #eee;
+    }
+    .header-title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .header-right {
+      display: flex;
+      gap: 15px;
+    }
+    .header-right a {
+      color: #666;
+      text-decoration: none;
+    }
+    .search-bar {
+      padding: 15px;
+      background: #fff;
+      margin-bottom: 15px;
+    }
+    .search-input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #e3e8ee;
+      border-radius: 8px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      padding: 0 15px 15px;
+      background: #fff;
+    }
+    .filter-btn {
+      padding: 8px 15px;
+      border: 1px solid #e3e8ee;
+      border-radius: 6px;
+      background: #fff;
+      color: #666;
+      font-size: 14px;
+    }
+    .filter-btn.active {
+      background: #409eff;
+      color: #fff;
+      border-color: #409eff;
+    }
+    .product-list {
+      padding: 15px;
+    }
+    .product-item {
+      background: #fff;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 1px 3px #eee;
+    }
+    .product-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .product-name {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .product-status {
+      color: #409eff;
+      font-size: 14px;
+    }
+    .product-info {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 10px;
+    }
+    .product-image {
+      width: 80px;
+      height: 80px;
+      background: #f4f7f9;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
+    }
+    .product-details {
+      flex: 1;
+    }
+    .product-price {
+      color: #ff4d4f;
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .product-stock {
+      color: #666;
+      font-size: 14px;
+    }
+    .product-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid #eee;
+    }
+    .action-btn {
+      padding: 6px 12px;
+      border: 1px solid #e3e8ee;
+      border-radius: 4px;
+      background: #fff;
+      color: #666;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    .action-btn.primary {
+      background: #409eff;
+      color: #fff;
+      border-color: #409eff;
+    }
+    .add-btn {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 50px;
+      height: 50px;
+      background: #409eff;
+      color: #fff;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-title">商品管理</div>
+    <div class="header-right">
+      <a href="message_center.html">消息</a>
+      <a href="profile.html">我的</a>
+    </div>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" class="search-input" placeholder="搜索商品名称、编号">
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn active">全部</button>
+    <button class="filter-btn">在售</button>
+    <button class="filter-btn">已下架</button>
+    <button class="filter-btn">待审核</button>
+  </div>
+
+  <div class="product-list">
+    <div class="product-item">
+      <div class="product-header">
+        <div class="product-name">高性能刹车片</div>
+        <div class="product-status">在售</div>
+      </div>
+      <div class="product-info">
+        <div class="product-image">图片</div>
+        <div class="product-details">
+          <div class="product-price">¥640.00</div>
+          <div class="product-stock">库存：100件</div>
+        </div>
+      </div>
+      <div class="product-actions">
+        <a href="#" class="action-btn">编辑</a>
+        <a href="#" class="action-btn">下架</a>
+        <a href="#" class="action-btn primary">查看详情</a>
+      </div>
+    </div>
+
+    <div class="product-item">
+      <div class="product-header">
+        <div class="product-name">机油滤芯</div>
+        <div class="product-status">在售</div>
+      </div>
+      <div class="product-info">
+        <div class="product-image">图片</div>
+        <div class="product-details">
+          <div class="product-price">¥240.00</div>
+          <div class="product-stock">库存：50件</div>
+        </div>
+      </div>
+      <div class="product-actions">
+        <a href="#" class="action-btn">编辑</a>
+        <a href="#" class="action-btn">下架</a>
+        <a href="#" class="action-btn primary">查看详情</a>
+      </div>
+    </div>
+
+    <div class="product-item">
+      <div class="product-header">
+        <div class="product-name">空气滤芯</div>
+        <div class="product-status">待审核</div>
+      </div>
+      <div class="product-info">
+        <div class="product-image">图片</div>
+        <div class="product-details">
+          <div class="product-price">¥120.00</div>
+          <div class="product-stock">库存：200件</div>
+        </div>
+      </div>
+      <div class="product-actions">
+        <a href="#" class="action-btn">编辑</a>
+        <a href="#" class="action-btn">下架</a>
+        <a href="#" class="action-btn primary">查看详情</a>
+      </div>
+    </div>
+  </div>
+
+  <a href="product_detail.html" class="add-btn">+</a>
+</body>
+</html> 
